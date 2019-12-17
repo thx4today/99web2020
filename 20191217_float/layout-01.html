@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout-01</title>
+    <style>
+        *{margin: 0;padding: 0;}        
+        div h3{text-align: center; margin-bottom: 10px;}
+        div.wrap{padding: 20px 0;background-color: salmon;}
+        div.wrap>div.section{
+            background-color: blue;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        div.wrap>div.section>div{
+            background-color: skyblue;
+            width: 292.5px;
+            float: left;
+            margin-right: 10px;
+        }
+        div.wrap>div.section>div:last-child{margin-right: 0;}
+        
+        .clearfix:after{content: "";display: block;clear: both;}
+        div.wrap img{width: 100%;display: block;}
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>gallery01</h3>
+        <div class="section clearfix">
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>           
+            
+        </div>
+        
+    </div>
+</body>
+</html>
