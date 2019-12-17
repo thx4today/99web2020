@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        a:visited,a:link{
+            text-decoration: none;
+            color:#000
+        }
+        div.header{
+            width: 1200px;/*
+            background-color: skyblue;*/
+            margin: 0 auto;
+            padding-top: 20px;
+            margin-bottom: 20px;}
+        
+        div.header>h1{
+            width: 100px;
+            background-color: #fff;
+            margin: 0 auto;
+            text-align: center;/* margin-top: 10px;를 쓰면 부모자까지 다 떨어지므로 부모자의 padding-top값을 넣어준다.*/
+            
+        }
+        div.header>div.nav{width: 100%;padding-top: 20px;}
+        div.header>div.nav>ul{}
+        div.header>div.nav>ul:after{
+            content:"";display: block;clear: both;
+        }
+        div.header>div.nav>ul>li:hover a{
+            background-color: blue;
+            color: #fff
+        }
+        div.header>div.nav>ul>li{
+            background-color: skyblue;
+            float: left;
+            width: 20%;
+            text-align: center}
+        div.header>div.nav>ul>li>a{
+            display: block;
+            line-height: 40px;
+        }/*
+        div.header>div.nav>ul>li:hover a{
+            color:white
+        [a]에 hover값을 줬을 때는 필요없음
+        }*/
+           
+        div.visual{
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="#">logo</a></h1>
+        <div class="nav">
+          <!--ul>li*5>a[#]>{menu}-->
+           <ul>
+               <li><a href="#">menu</a></li>
+               <li><a href="#">menu</a></li>
+               <li><a href="#">menu</a></li>
+               <li><a href="#">menu</a></li>
+               <li><a href="#">menu</a></li>
+           </ul>
+        </div>
+    </div>
+        <div class="visual"></div>
+</body>
+</html>
