@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>float</title>
+    <style>
+        div .container {background-color: seagreen;}
+        div img {width: 200px;display: block; float:left}
+        div.container:after{content: "";display: block;clear: both;}
+    </style>
 </head>
 <body>
-    test
-</body>
+   <div class="container">
+     <img src="../images/testimg01.jpg" alt="">
+     <img src="../images/testimg01.jpg" alt="">
+     <img src="../images/testimg01.jpg" alt="">       
+    </div>
+    <div>float clrate</div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque accusantium animi tempore cum inventore. Alias unde aliquid at esse voluptates doloribus commodi libero expedita. Minima impedit sunt est. Vel, omnis?</span>
+   </body>   
 </html>
