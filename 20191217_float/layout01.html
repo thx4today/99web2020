@@ -13,7 +13,7 @@
         div.header{
             width: 1200px;/*
             background-color: skyblue;*/
-            margin: 0 auto;
+            margin: 0 auto; background-color: red;
             padding-top: 20px;
             margin-bottom: 20px;}
         
@@ -21,13 +21,16 @@
             width: 100px;
             background-color: #fff;
             margin: 0 auto;
-            text-align: center;/* margin-top: 10px;를 쓰면 부모자까지 다 떨어지므로 부모자의 padding-top값을 넣어준다.*/
-            
+            text-align: center;/* margin-top: 10px;를 쓰면 부모자까지 다 떨어지므로 부모자의 padding-top값을 넣어준다.*/            
         }
-        div.header>div.nav{width: 100%;padding-top: 20px;}
+        div.header>div.nav{
+            width: 100%;
+            padding-top: 20px;}
         div.header>div.nav>ul{}
         div.header>div.nav>ul:after{
-            content:"";display: block;clear: both;
+            content:"";
+            display: block;
+            clear: both;
         }
         div.header>div.nav>ul>li:hover a{
             background-color: blue;
