@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<style>
+		/* reset */
+	*{margin: 0;padding: 0;}
+	li{list-style: none;}
+	a:visited,
+	a:link{
+		text-decoration: none;
+		color: #000;}
+	.clearfix:after{
+		content: ""; display: block;clear: both;
+	}
+	/* header start */
+	div#header{
+		background-color: skyblue;
+		width: 1000px;
+		padding-top: 20px;
+		margin: 0 auto;
+	}
+	div>h1{
+		background-color: #fff;
+		width: 100px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	div#header>ul.gnb{}
+	div#header>ul.gnb>li{
+		text-align: center;
+		float: left;
+		width: 166.66px;
+	}
+	div#header>ul.gnb>li>a{
+		display: block;
+		line-height: 40px;
+		transition: 1s;
+	} 
+	div#header>ul.gnb>li>a:hover{
+		background-color: pink;
+
+	}
+	/*header end*/
+
+	/*visual*/
+	div.visual{
+		width: 100%;
+		height: 400px;
+		background-color: pink;
+	}
+
+	/*container start*/
+	div.container{
+		margin: 0 auto;
+		width: 1000px;
+		background-color: violet;
+	}
+	div.container>h3{
+		_background-color: gold;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	div.container>ul{}
+	div.container>ul>li{
+		float: left;
+		width: 242.5px;
+		margin: 0 auto;
+		margin-right: 10px;
+	}
+	div.container>ul>li>img{
+		width: 100%;
+	}
+	div.container>ul>li:last child{
+		margin-right: 0;
+	}
+	
+	/*container end*/
+	div#footer{}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>LOGO</h1>		
+			<ul class="gnb clearfix">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+				<li><a href="#">menu4</a></li>
+				<li><a href="#">menu5</a></li>
+				<li><a href="#">menu6</a></li>
+			</ul>
+	</div>
+	<div class="visual"></div>
+	<div class="container clearfix">
+		<h3>GALLERY</h3>
+		<ul>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>
