@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout-02</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .clearfix:after{
+            content: "";display: block;clear: both;
+        }
+        div.wrap{
+            background-color: salmon;
+            
+        }
+        div h3{text-align: center;}
+        div.wrap>div.section{
+            background-color: blue;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        div.wrap>div.section>div{float: left;}
+        div img{}
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>gallery01</h3>
+        <div class="section clearfix">
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            <div><img src="../images/testimg01.jpg" alt=""></div>
+            
+        </div>
+    </div>
+</body>
+</html>
