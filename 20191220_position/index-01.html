@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>푸른혁신당</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		li{list-style: none}
+		a:visited,
+		a:link{text-decoration:none;color:#000;}
+		.clearfix:after{content:"";display:block;clear:both;}
+		/*header*/
+		div#header>h1{
+			background-color: pink;
+ 			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 50%; 
+		}		
+		div#header>nav.navLogin{
+			background-color: skyblue;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			right: 100px;
+		}
+		div#header>nav.navLogin>ul{
+
+		}
+		div#header>nav.navLogin>ul>li{
+			float: left;
+			width: 100px;
+			height: 30px;
+		}
+		div#header>nav.nav{
+			background-color: gold;
+			text-align: center;
+			position: absolute;
+			margin-top: 100px;
+			left: 50%;
+			}
+		div#header>nav.nav>ul>li{
+			float: left;
+			width: 166.67px;
+			height : 50px;
+			line-height: 50px;
+		}
+
+/*visual
+		div.visual>img{
+			width: 1200px;
+			margin: 0 auto;
+			display: block;
+		}*/
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>푸른혁신당</h1>
+		<nav class="navLogin">
+			<ul class="clearfix">
+				<li><a href="#">Login</a></li>
+				<li><a href="">Join</a></li>
+				<li><a href="">Contact Us</a></li>
+				<li><a href="">English</a></li>
+			</ul>
+		</nav>
+		<nav class="nav">
+			<ul class=clearfix>
+				<li><a href="#">회사소개</a></li>
+				<li><a href="#">제품소개</a></li>
+				<li><a href="#">사업영역</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li><a href="#">사회공헌</a></li>
+				<li><a href="#">인재채용</a></li>
+			</ul>
+		</nav>
+
+	</div>
+<!-- 	<div class="visual">		
+		<img src="../images/visual_bg.jpg" alt="#">
+	</div> -->
+	
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			position: absolute;}
+		div.box1{
+			background-color: skyblue;
+			top: 0;
+			left: 50%;
+			margin-left: -100px;
+			z-index: 1;
+		}
+		div.box1:after{
+			content: "입니다";
+		}
+		div.box2{
+			background-color: pink;
+			top: 50%;
+			right: 0;
+			margin-top: -100px;
+		}
+		div.box3{
+			background-color: gold;
+			bottom: 0;
+			left: 50%;
+			margin-left: -100px;
+		}
+		div.box4{
+			background-color: green;
+			top: 50%;
+			left: 0;
+			margin-top: -100px;
+		}
+		 div.box5{
+			background-color: #b287eb;
+			top: 50%;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -100px;
+
+		} 
+		div.boxWrap{
+			background-color: gray;
+			position: relative;
+			width: 1000px;
+			height: 1000px;
+			margin: 0 auto;
+		}
+
+	</style>
+
+
+</head>
+<body>
+<!-- 	div.box$*4>{box$} -->
+	<div class="boxWrap">
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+	</div>
+
+</body>
+</html>

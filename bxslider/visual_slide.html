@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider({				
+				/*page 옆으로 넘기기*/mode:"vertical",
+				/*pager 바꾸기*/pagerCustom:".bx-pager"
+			});
+		});
+	</script>
+	<style>
+		.wrapper{
+			width: 500px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.bx-wrapper {
+			background-color: #f00;
+		    -moz-box-shadow: 0 none;
+		    -webkit-box-shadow: 0 none;
+		    box-shadow: 0 none;
+		    border: 0 none;
+		    margin-bottom: 0;
+		}
+		.slider_pager{
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+		}
+		.slider_pager a{
+			display: block;
+			float: left;
+			width: 25%;
+			background-color: skyblue;
+			text-align: center;
+			line-height: 40px;
+		}
+		.slider_pager a.active{
+			background-color: blue;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="sliderWrap">
+		<ul class="slider">
+			<li><img src="images/main_slider01.jpg" alt=""></li>
+			<li><img src="images/main_slider01.jpg" alt=""></li>
+			<li><img src="images/main_slider01.jpg" alt=""></li>
+			<li><img src="images/main_slider01.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="slider_pager">
+		<div class="bx-pager clearfix">
+			<a href="#" data-slide-index="0">menu1</a>
+			<a href="#" data-slide-index="1">menu2</a>
+			<a href="#" data-slide-index="2">menu3</a>
+			<a href="#" data-slide-index="3">menu4</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
