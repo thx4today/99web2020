@@ -9,11 +9,16 @@
 		/*ul.slider li img{
 			width: 100%;
 		}*/
+		.wrapper{
+			width: 500px;
+			margin: 0 auto;
+			position: relative;
+		}/* 
 		.sliderWrap{
 			width: 500px;
 			margin: 0 auto;
 			position: relative;
-		}
+		} */
 		.bx-wrapper {
 		    -moz-box-shadow: 0 none;
 		    -webkit-box-shadow: 0 none;
@@ -38,15 +43,35 @@
 		.prevBtn img,.nextBtn img{
 			width: 50px;
 		}
+		/* bxSlider안에 새로운 메뉴버튼 적용 */
+		.slider_pager{
+			background-color: skyblue;
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+		}
+		.slider_pager a{
+			display: block;
+			float: left;
+			width: 33.3%;
+			background-color: pink;
+			text-align: center;
+			line-height: 40px;
+		}
+		.slider_pager a.active{
+			background-color: blue;
+			color: #fff;
+		}
 		</style>
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
 	<script>
 		$(document).ready(function(){
 			var mySlide = $(".slider").bxSlider({
-				/*이미지자동전환*/auto:true, 
-				/*nextpage*/controls:false,
-				/*하단페이지*/pager:false
+				pagerCustom:".bx-pager",
+				// /*이미지자동전환*/auto:true, 
+				// /*nextpage*/controls:false,
+				// pager:false
 			});
 			$(".nextBtn").click(function(){/*무명함수*/
 				/*변수:변하는data*/mySlide.goToNextSlide()
@@ -59,6 +84,7 @@
 	</script>
 </head>
 <body>
+<div class="wrapper clearfix">
 	<!-- 	ul.slider>li*3>img[src="images/pc0$.jpg"] -->
 	<div class="sliderWrap">
 		<ul class="slider">
@@ -73,14 +99,23 @@
 			<img src="images/right.png" alt="다음">
 		</div>
 	</div>
-	<div style="height: 200px;background-color: #f00">
-		
+
+	<div class="slider_pager">
+		<div class="bx-pager clearfix">
+			<a href="#" data-slide-index="0">menu1</a>
+			<a href="#" data-slide-index="1">menu2</a>
+			<a href="#" data-slide-index="2">menu3</a>
+		</div>
 	</div>
+</div>
+
+	<div style="height: 200px;background-color: #f00"></div>
 	
 	<ul class="sliderOne">
 		<li><img src="images/pc01.jpg" alt="img01"></li>
 		<li><img src="images/pc02.jpg" alt="img02"></li>
 		<li><img src="images/pc03.jpg" alt="img03"></li>
 	</ul>
+
 </body>
 </html>
