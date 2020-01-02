@@ -215,37 +215,67 @@ article#container2>ul>li>div.card>div.card_body>a{
 }
 /**/
 /*footer*/
-footer{
-	margin-top: 30px;
-	background-color: #aaa;
-	width: 100%;
-	height: 50px;
+footer#main_footer{
+	height: 150px;
+	background-color: #5e5e5e;
+	margin-top: 20px;
 }
-footer>div.footer{
+footer#main_footer>div.footerWrap{
+	height: 43px;
+	background-color: #4d4d4d;
 }
-footer>div.footer>ul.footer_menu{
+footer#main_footer>div.footerWrap>div.footer{
 	width: 980px;
 	margin: 0 auto;
 }
-footer>div.footer>ul.footer_menu>li{
+footer#main_footer div.footer ul{
+	overflow: hidden;
+}
+footer#main_footer div.footer ul li{
 	float: left;
+	position: relative;
+}
+footer#main_footer div.footer ul li a{
+	display: block;
+	padding: 0 30px;
+	font-size: 0.8em;
+	line-height: 43px;
+	color: #cdcdcd;
+	font-weight: bold;
+}
+footer#main_footer div.footer ul li:first-child a{
+	padding-left: 0;
+}
+footer#main_footer div.footer ul li:after{
+	content: "";
+	width: 1px;
+	height: 15px;
+	background-color: #f00;
+	display: block;
+	position: absolute;
+	top: 15px;
+	left: -1px;
+}
+footer#main_footer>div.footerAdd{
+	width: 980px;
+	margin: 0 auto;
+}
+footer#main_footer>div.footerAdd h2{
+	float: left;
+	color: #fff;
+	padding-top: 10px;
 	margin-right: 20px;
 }
-footer>div.footer>ul.footer_menu>li:after{
-	content:"";
-	display: block;
-	width: 1px;
-	height: 10px;
-	background-color: #f00;
-	position: absolute;
+
+footer#main_footer>div.footerAdd address{
+	float: left;
+	margin-left: 20px;
+	font-style: normal;
+	color: #cdcdcd;
+	padding-top : 10px;
 }
+
 /*footer end*/
-/*address start*/
-address{
-	background-color: #000;
-	color:#fff;
-}
-/*address end*/
 
 
 
