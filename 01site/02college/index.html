@@ -5,6 +5,14 @@
 	<title>한국대학교</title>
 	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+  	</script>
 
 </head>
 <body>
@@ -53,29 +61,43 @@
 			</nav>
 		</div>
 	</header>
-	<section>
-		<div class="container">
-			<div class="wrapper">
-				<div class="txtWrap clearfix">
-					<div class="pWrap">
-						<p>함께 나누며 세상을 이끌어</p>
-						<span>세계로 향하는 한국대학교</span>
-					</div>
-					<div class="iconWrap">
-						<ul class="clearfix">
-							<li><img src="images/ico_01.png" alt=""><br>입학절차안내</li>
-							<li><img src="images/ico_02.png" alt=""><br>입학설명회</li>
-							<li><img src="images/ico_03.png" alt=""><br>장학제도</li>
-							<li><img src="images/ico_04.png" alt=""><br>증명서발급</li>
-						</ul>
-					</div>
+	<!-- 셋째줄 -->
+	<section class="container">
+		<div class="wrapper">
+			<div class="txtWrap clearfix">
+				<div class="pWrap">
+					<p>함께 나누며 세상을 이끌어</p>
+					<span>세계로 향하는 한국대학교</span>
 				</div>
-
-
-
+				<div class="iconWrap">
+					<ul class="clearfix">
+						<li><img src="images/ico_01.png" alt=""><br>입학절차안내</li>
+						<li><img src="images/ico_02.png" alt=""><br>입학설명회</li>
+						<li><img src="images/ico_03.png" alt=""><br>장학제도</li>
+						<li><img src="images/ico_04.png" alt=""><br>증명서발급</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-
+		<div class="sliderWrap"> <!-- 1200px -->
+			<ul class="clearfix" >
+				<li>
+					<ul class="slider"> <!-- 75% -->
+						<li><img src="images/women01.jpg" alt="#"></li>
+						<li><img src="images/women01.jpg" alt="#"></li>
+						<li><img src="images/women01.jpg" alt="#"></li>
+						<li><img src="images/women01.jpg" alt="#"></li>
+					</ul>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 	</section>
 </body>
 </html>
