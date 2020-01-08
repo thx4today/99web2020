@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>	<meta charset="UTF-8">
+	<title>transition</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.content_wrap{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		.content_wrap>.headerTitle{
+			width: 1200px;
+			margin: 0 auto;
+			margin-bottom: 40px;
+		}
+		.content_wrap>.headerTitle>h2{
+			text-align: center;
+		}
+		.content_wrap>.headerTitle>h2:after{
+			content: "";
+			display: block;
+			width: 150px;
+			height: 2px;
+			background-color: #333;
+			margin: 15px auto;
+		}
+		.content_wrap>.headerTitle>p{
+			text-align: center;
+		}
+		.content_wrap>ul.content{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.content_wrap>ul.content>li{
+			float: left;
+			width: 288.75px;
+			margin: 5.6px;
+			height: 288.75px;
+			position: relative;
+			overflow: hidden;
+		}
+		.content_wrap img{
+			width: 100%;
+		}
+
+		ul.content>li{}
+		ul.content>li>.overlay{}
+		ul.content>li>.overlay>.text{}
+		ul.content>li:hover .overlay{}
+	</style>
+
+</head>
+<body>
+	<div class="content_wrap">
+		<div class="headerTitle">
+			<h2>GALLERY</h2>
+			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, ab?</P>
+		</div>
+		<ul class="content clearfix">
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<div class="overlay">
+					<div class="text">lorem ipsum.</div>
+				</div>
+			</li>
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<div class="overlay">
+					<div class="text">lorem ipsum.</div>
+				</div>
+			</li>
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<div class="overlay">
+					<div class="text">lorem ipsum.</div>
+				</div>
+			</li>
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<div class="overlay">
+					<div class="text">lorem ipsum.</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
