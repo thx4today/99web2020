@@ -8,6 +8,7 @@
 fieldset{
 	border:1px solid #dadada;
 	background-color: #fff;
+	margin-bottom: 10px; /*간격을 띄울 때는  ma rgin-top:0;보다 margin-bottom:0을 사용한다;*/
 }
 body{
 	background-color: #eee;
@@ -50,10 +51,11 @@ div#header h1 a{ /*마우스커서모양만 나오는 용도*/
 	position: absolute;
 	top: 0;
 	right: 10px;
-	text-indent: -9999em;
+	/*들여쓰기*/text-indent: -9999em;
 	background-image: url(../images/ico_join3.png);
 	background-repeat: no-repeat;
 }
+/*sprit 이미지 사용*/
 #content fieldset  .field .icon.mail/*ico과mail은★꼭★붙혀써준다*/{
 		background-position: 0 -47px;
 }
@@ -70,5 +72,64 @@ div#header h1 a{ /*마우스커서모양만 나오는 용도*/
 	background: #1fbc02 url(../images/btn_join2.gif) no-repeat 50% -3px;
 	text-indent: -9999em;
 	border-radius: 30px;
+	cursor: pointer;	
+}
+#content fieldset .field .btn-label{
+	display: block;
+	width: 212px;
+	height: 31px;
+	border: 1px solid #dcdcdc;
+	position: absolute;
+	top: 8px;
+	text-align: center;
+	line-height: 31px;
+	background-color: #fff;
 	cursor: pointer;
 }
+#content fieldset .field .btn-label.male{left: 15px;}
+#content fieldset .field .btn-label.female{left: 228px;}
+#content fieldset .field.btn-radio{
+	height: 49px;
+}
+#content fieldset .field.btn-radio input{
+	position: relative;
+	left: 50px;
+	top: 14px; /*위로 올려서 숨기기*/
+}
+#content fieldset .field.birth label{
+	float: left;
+	width: 53px;
+	height: 49px;
+	border-right: 1px solid #efefef;
+	text-align: center;
+	line-height: 49px;
+	background-color: #f7f7f7;
+	color: #999;
+}
+#content fieldset .field.birth input{float: left;}
+#content fieldset .field.birth select{
+	float: left;
+	width: 110px;
+	height: 29px;
+	border: 0 none;
+	font-size: 15px;
+	line-height: 29px;
+	background: url(../images/sel_arr.gif) no-repeat 100% 50%;
+	-webkit-appearance:none;
+	margin-top: 10px;
+	margin-left: 17px;
+}
+#content fieldset .field.birth .field-wall{
+	float: left;
+	width: 0;
+	height: 29px;
+	border-right: 1px solid #cdcdcd;
+	text-indent: -9999px;
+	margin-top: 10px;
+}
+
+#content fieldset .field.birth .field
+
+.w458{width: 458px !important;}
+.w145{width: 145px !important;}
+.w130{width: 130px !important;}

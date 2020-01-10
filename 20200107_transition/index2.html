@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>	<meta charset="UTF-8">
+<head>
+	<meta charset="UTF-8">
 	<title>transition</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
@@ -11,13 +12,13 @@
 		.content_wrap>.headerTitle{
 			width: 1200px;
 			margin: 0 auto;
-			margin-bottom: 40px;
+			margin-bottom:40px;
 		}
 		.content_wrap>.headerTitle>h2{
 			text-align: center;
 		}
 		.content_wrap>.headerTitle>h2:after{
-			content: "";
+			content:"";
 			display: block;
 			width: 150px;
 			height: 2px;
@@ -27,6 +28,7 @@
 		.content_wrap>.headerTitle>p{
 			text-align: center;
 		}
+		
 		.content_wrap>ul.content{
 			width: 1200px;
 			margin: 0 auto;
@@ -34,51 +36,73 @@
 		.content_wrap>ul.content>li{
 			float: left;
 			width: 288.75px;
-			margin: 5.6px;
-			height: 288.75px;
+			margin-right:15px;
+			height:288.75px;
 			position: relative;
 			overflow: hidden;
+		}
+		.content_wrap>ul.content>li:last-child{
+			margin-right:0;
 		}
 		.content_wrap img{
 			width: 100%;
 		}
+		/*1200 - 45 = 1155  -> LI 288.75PX*/
+		ul.content > li{}
+		ul.content > li > a .overlay{
+			width: 100%;
+			height:100%;
+			background-color:rgba(0,255,0,0.5);
+			position: absolute;
+			top:100%;
+			left:0;
+			padding-top:120px;
+			transition:0.3s;
+		}
+		ul.content > li > a .overlay > .text{
+			text-align: center;color:white;font-weight:bold;
+		}
+		ul.content > li:hover a .overlay{top:0;}
 
-		ul.content>li{}
-		ul.content>li>.overlay{}
-		ul.content>li>.overlay>.text{}
-		ul.content>li:hover .overlay{}
+		.pink{background-color: pink;}
+		.bg1{
+			background-image: url(../images/pc01.jpg);
+			border-top-right-radius: no-repeat;
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
 	</style>
-
 </head>
 <body>
 	<div class="content_wrap">
 		<div class="headerTitle">
 			<h2>GALLERY</h2>
-			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, ab?</P>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, tenetur?</p>
 		</div>
 		<ul class="content clearfix">
 			<li>
 				<img src="../images/testimg.jpg" alt="">
 				<div class="overlay">
-					<div class="text">lorem ipsum.</div>
+					<div class="text"><a href="">Lorem ipsum.</a></div>
+				</div>
+			</li>
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<a href=""><div class="overlay">
+					<div class="text">Lorem ipsum.</div>
+				</div></a>
+			</li>
+			<li>
+				<img src="../images/testimg.jpg" alt="">
+				<div class="overlay">
+					<div class="text">Lorem ipsum.</div>
 				</div>
 			</li>
 			<li>
 				<img src="../images/testimg.jpg" alt="">
 				<div class="overlay">
-					<div class="text">lorem ipsum.</div>
-				</div>
-			</li>
-			<li>
-				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
-					<div class="text">lorem ipsum.</div>
-				</div>
-			</li>
-			<li>
-				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
-					<div class="text">lorem ipsum.</div>
+					<div class="text">Lorem ipsum.</div>
 				</div>
 			</li>
 		</ul>

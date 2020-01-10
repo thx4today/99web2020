@@ -17,10 +17,13 @@
 				<h2 class="blind">네이버 회원가입</h2><!-- 표출이 되지 않음 -->
 				<div class="join">
 					<form action="#" method="method">
-						<fieldset>
+						<fieldset> <!-- 항목을 그룹화 -->
 							<legend>아이디, 비밀번호</legend>
-							<p class="field">
+							<!-- inline태그여서 줄나누기 위해 p태그 사용 -->
+							<p class="field"> 
+							<!-- label/for이름과 infut/id이 같으면 포커싱이 된다 -->
 								<label for="user-id" class="blind">아이디</label>
+								<!-- placeholder : 미리보여주는 글씨 -->
 								<input type="text" id="user-id" name="userid" placeholder="아이디를 입력하세요" class="inp-field">
 								<span class="icon mail">@naver.com</span>
 							</p>
@@ -35,7 +38,60 @@
 								<span class="icon pw2">비밀번호</span>
 							</p>
 						</fieldset>
-						<div class="btn-area"><input type="submit" value="가입하기" class="btn-submit"></div>
+						<fieldset>
+							<legend>개인정보</legend>
+							<p class="field">
+								<label for="username" class="blind"></label>
+									<!-- input의 name은 개발자와 협의하여 결정한다 -->
+									<input type="text" id="username" name="username"class="inp-field w458" placeholder="이름">		
+							</p>
+							<p class="field btn-radio">
+								<label for="male" class="btn-label male">남자</label>
+								<input type="radio" id="male" name="user-s" value="남자">
+								<label for="male" class="btn-label female">여자</label>
+								<input type="radio" id="female" name="user-s" value="여자">
+								<!-- input/name의 value값이 같아야함 -->
+							</p>
+							<p class="field birth">
+								<label for="user-birth">생일</label>
+								<input type="text" id="user-birth" name="userbirth" placeholder="년(4글자)" maxlength="4" class="inp-field w130">
+								<span class="field-wall">|</span>
+								<select name="month">
+									<!-- option[value="$"]*12>{$월} -->
+									<option value="1">1월</option>
+									<option value="2">2월</option>
+									<option value="3">3월</option>
+									<option value="4">4월</option>
+									<option value="5">5월</option>
+									<option value="6">6월</option>
+									<option value="7">7월</option>
+									<option value="8">8월</option>
+									<option value="9">9월</option>
+									<option value="10">10월</option>
+									<option value="11">11월</option>
+									<option value="12">12월</option>
+								</select>
+								<span class="field-wall">|</span>
+								<input type="text" placeholder="일" maxlength="2" class="inp-field w145">
+							</p>
+						
+						<p class="field">
+							<label for="user-email" class="blind">본인확인</label>
+							<input type="text" id="user-email" name="usermail" placeholder="본인확인 이메일(선택)" class="inp-field w458">
+						</p>
+</fieldset>
+
+
+
+
+
+
+
+						<!-- 버튼영역 -->
+						<div class="btn-area">
+							<input type="submit" value="가입하기" class="btn-submit">
+						</div>
+						<!-- 버튼영역 끝 -->
 					</form>
 				</div>
 			</div>

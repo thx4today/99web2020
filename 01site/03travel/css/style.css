@@ -71,14 +71,15 @@ fieldset .inp-field{
 /*SNS버튼*/
 .btnsns{
 	float: right;
+	padding-top: 30px;
 }
 .btnsns>ul>li{
 	float: left;
 	margin-right: 5px;
+
 }
 .btnsns>ul>li>a{
 	display: block;
-	line-height: 90px;
 }
 
 /*nav*/
@@ -88,7 +89,7 @@ fieldset .inp-field{
 }
 .navWrap>nav.nav{
 	width: 980px;
-	height: 60px;
+	height: 6 0px;
 	margin: 0 auto;
 }
 .navWrap>nav.nav>ul{}
@@ -96,12 +97,14 @@ fieldset .inp-field{
 	float: left;
 	width: 163.33px;
 	border-right: 1px solid #ddd;
-}
+		position: relative;
+		overflow: hidden;
+}/*
 .navWrap>nav.nav>ul>li:hover a{
 	background-color: #0868a4;
 	color: #fff;
 	transition: 0.5s;
-}	
+}	*/
 .navWrap>nav.nav>ul>li:first-child{
 	border-left: 1px solid #ddd;
 }
@@ -111,36 +114,24 @@ fieldset .inp-field{
 	text-align: center;
 	font-weight: bold;
 }
+.navWrap>nav.nav>ul> li > a .overlay{
+	width: 100%;
+	height:100%;
+	background-color: #0e73a7;
+	position: absolute;
+	top:100%;
+	left:0;
+	transition:0.3s;
+}
+.navWrap>nav.nav>ul> li > a .overlay > .text{
+	text-align: center;
+	color:white;
+	font-weight:bold;
+}
+.navWrap>nav.nav>ul> li:hover a .overlay{top:0;}
 /*header 끝*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*--------------------------------------------*/
 
 /*section 시작*/
 .sectionWrap{
@@ -148,27 +139,145 @@ fieldset .inp-field{
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
-
 }
 section{
-	display: none;
 	top: 120px;
 	width: 985px;
 	height: 1200px;
 	margin: 0 auto;
-	background-image: url(/images/.jpg);
 	position: relative;
 }
-section>.section_text{
-	
+section>.section_text{	
 }
-section>.reservatin{
-	width: 485px;
-	height: 300px;
-	background-color: gold;
-}
-section>img{
+/*section>img{
 	position: absolute;
 	right: -100px;
 	top: 120px;
+}*/
+/*예약시작*/
+.sliderWrap{
+	width:
+	 485px;
+	height: 300px;
+	background-color: pink;
+	overflow: hidden;
+}
+.sliderWrap>.slider>ul{}
+.sliderWrap>.slider>ul>li{
+	float: right;
+	margin: 0 auto;
+}
+.sliderWrap>.slider>ul>li>.f_layer{
+	width: 350px;
+}
+.sliderWrap>.slider>ul>li>.f_layer>fieldset{
+	border:0 none;
+	border-radius: 0 !important;
+}
+.sliderWrap>.slider>ul>li>.f_layer>fieldset>legend{
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -9999px;
+}
+.f_layer fieldset label{
+	display: block; padding: 5px 0;
+}
+/*선택창 출발일*/
+
+.f_layer fieldset .date_left,
+.f_layer fieldset .date_right{
+	float: left;
+	width: 150px;
+	margin-right: 5px;
+}
+/*선택창 좌석등급*/
+.f_layer fieldset .sleft,
+.f_layer fieldset .sright,
+.f_layer fieldset .grade{
+	float: left;
+	width: 140px;
+	margin-right: 10px;
+}
+
+/*선택창 1,4*/
+.f_layer fieldset select{
+	display: block;
+	width: 90%;
+	height: 40px;
+	font-size:1em;
+	text-indent: 8px;
+	border-radius: 5px;
+}
+.f_layer fieldset select .grade{
+	display: block;
+	width: 100%;
+	height: 40px;
+	font-size:1em;
+	text-indent: 8px;
+	border-radius: 5px;
+}
+.f_layer fieldset .sleft input,
+.f_layer fieldset .sright input,
+.f_layer fieldset .date_left input,
+.f_layer fieldset .date_right input{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 8px;
+	font-size: 1em;
+	font-weight: bold;
+}
+.numpeople01,
+.numpeople02{
+	float: left;
+	width: 67px;
+}
+.numpeople01 input,
+.numpeople02 input{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 8px;
+	font-size: 1em;
+	font-weight: bold;
+}
+.numpeople01{
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.btn_search{
+	float: left;
+	width: 310px;
+	height: 40px;
+	border-radius: 5px;
+	background-color: #ea4f1f;
+	text-align: center;
+	line-height: 40px;
+}
+.btn_search a{
+	color: #fff;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.btn_search a:hover{
+	color: #ea4f1f;
+	background-color: #fff;
+	border: 1px solid #ea4f1f;
+	border-radius: 5px;
+	transition: 0.3s;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.btn_search>a>img{
+	position: absolute;
+	margin-top: 8px;
+	margin-left: -30px;
 }
