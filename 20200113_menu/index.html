@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		nav.gnb{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: skyblue;
+		}
+		nav.gnb>ul{}
+		nav.gnb>ul>li{
+			float: left;
+			width: 20%;
+			height: 40px;
+		}
+		nav.gnb>ul>li>a{
+			display: block;
+			text-align: center;
+			line-height: 40px;
+		}
+		nav.gnb>ul>li:hover{			
+			background-color: darkblue;
+		}
+		nav.gnb>ul>li:hover a{
+			color: #fff;
+		}
+		.submenu{
+			display: none;
+			background-color: orange;
+			text-align: center;
+			color: #fff;
+			line-height: 40px;
+			padding-bottom: 10px;
+		}
+		.submenu>li{
+		}		
+		.submenu>li:hover{background-color: #00f;}		
+		nav.gnb>ul:hover .submenu{
+			display: block;
+			color: #fff;
+			text-align: center;
+			_background-color:darkblue;
+
+		}
+		nav.gnb>ul>li:hover .submenu{
+			background-color:darkblue;
+			color: #fff;}
+		nav.gnb>ul>li:hover a{
+			color: #fff;
+		}
+		nav.gnb>ul>li .submenu a{
+			color:red;
+		}
+		
+		/*
+
+
+		nav.gnb>ul>li:first-child .submenu{
+			display: block;
+		}*/
+	</style>
+</head>
+<body>
+	<nav class="gnb">
+		<ul class="clearfix">
+			<li><a href="#">menu1</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0101</a></li>
+					<li><a href="#">smenu0102</a></li>
+					<li><a href="#">smenu0103</a></li>
+					<li><a href="#">smenu0104</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu2</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0201</a></li>
+					<li><a href="#">smenu0202</a></li>
+					<li><a href="#">smenu0203</a></li>
+					<li><a href="#">smenu0204</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu3</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0301</a></li>
+					<li><a href="#">smenu0302</a></li>
+					<li><a href="#">smenu0303</a></li>
+					<li><a href="#">smenu0304</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu4</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0401</a></li>
+					<li><a href="#">smenu0402</a></li>
+					<li><a href="#">smenu0403</a></li>
+					<li><a href="#">smenu0404</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu1</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0501</a></li>
+					<li><a href="#">smenu0502</a></li>
+					<li><a href="#">smenu0503</a></li>
+					<li><a href="#">smenu0504</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

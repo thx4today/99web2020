@@ -12,7 +12,7 @@
 	<script>
 		$(document).ready(function(){
 			$(".slider").bxSlider({				
-				// page 옆으로 넘기기 mode:"vertical",
+				mode:"vertical",
 				/*pager 바꾸기*/pagerCustom:".bx-pager"
 			});
 		});
@@ -20,7 +20,7 @@
 
 </head>
 <body>
-	<!-- 헤더 시작 -->
+<!-- 헤더 시작 -->
 <div class="wrap">
 	<header id="header">
 		<div class="header_top clearfix">
@@ -117,218 +117,339 @@
 	</header>
 	<!-- 헤더 끝 -->
 </div>
-
-
-	<!-- 섹션 시작 -->
+<!-- 섹션 시작 -->
 <div class="sectionWrap">
-
-	<section>				
-		<div class="sliderWrap">
-			<ul class="slider">
-				<li>
-					<form action="update.php" class="f_layer">		
-						<fieldset>
-							<legend>여행일정</legend>
-							<ul>
-								<li>
-									<label for="golo">가고싶은 나라를 선택하세요</label>
-									<select name="nara" id="golo">
-										<option value="">선택하세요</option>
-										<option value="말레이시아">말레이시아</option>
-										<option value="일본">일본</option>
-										<option value="싱가폴">싱가폴</option>
-									</select>
-								</li>
-								<li>
-									<div class="date_left">
-										<label for="sdate">출발일</label>
-										<input type="date" id="sdate">
-									</div>
-									<div class="date_right">
-										<label for="edate">도착일</label>
-										<input type="date" id="edate">
-									</div>
-								</li>
-								<li>
-									<div class="grade">
-										<label for="cgrade">좌석등급</label>
-										<select name="cgrade" id="cgrade">
-											<option value="비지니스">비지니스</option>
-											<option value="이코노미">이코노미</option>
+	<div class="airballoon">
+		<img src="images/02b.png" alt="">
+	</div>
+	<section class="section">
+		<div style="_display:none" class="reserve clearfix">
+			<!-- 예약 pager -->
+			<div class="slider_pager">
+				<div class="bx-pager clearfix">
+					<ul>
+						<li><a href="#" data-slide-index="0">공항예약</a></li>
+						<li><a href="#" data-slide-index="1">호텔예약</a></li>
+						<li><a href="#" data-slide-index="2">렌트카</a></li>
+						<li><a href="#" data-slide-index="3">휴양지</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 예약 시작 -->
+			<div class="sliderWrap">
+				<ul class="slider">
+					<li>
+						<form action="update.php" class="f_layer">		
+							<fieldset>
+								<legend>여행일정</legend>
+								<ul>
+									<li>
+										<label for="golo">가고싶은 나라를 선택하세요</label>
+										<select name="nara" id="golo">
+											<option value="">선택하세요</option>
+											<option value="말레이시아">말레이시아</option>
+											<option value="일본">일본</option>
+											<option value="싱가폴">싱가폴</option>
 										</select>
-									</div>
-									<div class="numpeople01">
-										<label for="num">성인</label>
-										<input type="number" id="num" placeholder="2">
-									</div>
-									<div class="numpeople02">
-										<label for="num">아이</label>
-										<input type="number" id="num" placeholder="1">
-									</div>
-								</li>
-								<li>
-									<div class="btn_search">
-										<a href="#"><img src="images/search.png" alt="">검색하기</a>
-									</div>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
+									</li>
+									<li>
+										<div class="date_left">
+											<label for="sdate">출발일</label>
+											<input type="date" id="sdate">
+										</div>
+										<div class="date_right">
+											<label for="edate">도착일</label>
+											<input type="date" id="edate">
+										</div>
+									</li>
+									<li>
+										<div class="grade">
+											<label for="cgrade">좌석등급</label>
+											<select name="cgrade" id="cgrade">
+												<option value="비지니스">비지니스</option>
+												<option value="이코노미">이코노미</option>
+											</select>
+										</div>
+										<div class="numpeople01">
+											<label for="num">성인</label>
+											<input type="number" id="num" placeholder="2">
+										</div>
+										<div class="numpeople02">
+											<label for="num">아이</label>
+											<input type="number" id="num" placeholder="1">
+										</div>
+									</li>
+									<li>
+										<div class="btn_search">
+											<a href="#"><img src="images/search.png" alt="">검색하기</a>
+										</div>
+									</li>
+								</ul>
+							</fieldset>
+						</form>
+					</li>
+					<li>
+						<form action="update.php" class="f_layer">		
+							<fieldset>
+								<legend>여행일정</legend>
+								<ul>
+									<li>
+										<label for="golo">가고싶은 나라를 선택하세요</label>
+										<select name="nara" id="golo">
+											<option value="">선택하세요</option>
+											<option value="말레이시아">말레이시아</option>
+											<option value="일본">일본</option>
+											<option value="싱가폴">싱가폴</option>
+										</select>
+									</li>
+									<li>
+										<div class="date_left">
+											<label for="sdate">출발일</label>
+											<input type="date" id="sdate">
+										</div>
+										<div class="date_right">
+											<label for="edate">도착일</label>
+											<input type="date" id="edate">
+										</div>
+									</li>
+									<li>
+										<div class="grade">
+											<label for="cgrade">좌석등급</label>
+											<select name="cgrade" id="cgrade">
+												<option value="비지니스">비지니스</option>
+												<option value="이코노미">이코노미</option>
+											</select>
+										</div>
+										<div class="numpeople01">
+											<label for="num">성인</label>
+											<input type="number" id="num" placeholder="2">
+										</div>
+										<div class="numpeople02">
+											<label for="num">아이</label>
+											<input type="number" id="num" placeholder="1">
+										</div>
+									</li>
+									<li>
+										<div class="btn_search">
+											<a href="#"><img src="images/search.png" alt="">검색하기</a>
+										</div>
+									</li>
+								</ul>
+							</fieldset>
+						</form>
+					</li>
+					<li>
+						<form action="update.php" class="f_layer">		
+							<fieldset>
+								<legend>여행일정</legend>
+								<ul>
+									<li>
+										<label for="golo">가고싶은 나라를 선택하세요</label>
+										<select name="nara" id="golo">
+											<option value="">선택하세요</option>
+											<option value="말레이시아">말레이시아</option>
+											<option value="일본">일본</option>
+											<option value="싱가폴">싱가폴</option>
+										</select>
+									</li>
+									<li>
+										<div class="date_left">
+											<label for="sdate">출발일</label>
+											<input type="date" id="sdate">
+										</div>
+										<div class="date_right">
+											<label for="edate">도착일</label>
+											<input type="date" id="edate">
+										</div>
+									</li>
+									<li>
+										<div class="grade">
+											<label for="cgrade">좌석등급</label>
+											<select name="cgrade" id="cgrade">
+												<option value="비지니스">비지니스</option>
+												<option value="이코노미">이코노미</option>
+											</select>
+										</div>
+										<div class="numpeople01">
+											<label for="num">성인</label>
+											<input type="number" id="num" placeholder="2">
+										</div>
+										<div class="numpeople02">
+											<label for="num">아이</label>
+											<input type="number" id="num" placeholder="1">
+										</div>
+									</li>
+									<li>
+										<div class="btn_search">
+											<a href="#"><img src="images/search.png" alt="">검색하기</a>
+										</div>
+									</li>
+								</ul>
+							</fieldset>
+						</form>
+					</li>
+					<li>
+						<form action="update.php" class="f_layer">		
+							<fieldset>
+								<legend>여행일정</legend>
+								<ul>
+									<li>
+										<label for="golo">가고싶은 나라를 선택하세요</label>
+										<select name="nara" id="golo">
+											<option value="">선택하세요</option>
+											<option value="말레이시아">말레이시아</option>
+											<option value="일본">일본</option>
+											<option value="싱가폴">싱가폴</option>
+										</select>
+									</li>
+									<li>
+										<div class="date_left">
+											<label for="sdate">출발일</label>
+											<input type="date" id="sdate">
+										</div>
+										<div class="date_right">
+											<label for="edate">도착일</label>
+											<input type="date" id="edate">
+										</div>
+									</li>
+									<li>
+										<div class="grade">
+											<label for="cgrade">좌석등급</label>
+											<select name="cgrade" id="cgrade">
+												<option value="비지니스">비지니스</option>
+												<option value="이코노미">이코노미</option>
+											</select>
+										</div>
+										<div class="numpeople01">
+											<label for="num">성인</label>
+											<input type="number" id="num" placeholder="2">
+										</div>
+										<div class="numpeople02">
+											<label for="num">아이</label>
+											<input type="number" id="num" placeholder="1">
+										</div>
+									</li>
+									<li>
+										<div class="btn_search">
+											<a href="#"><img src="images/search.png" alt="">검색하기</a>
+										</div>
+									</li>
+								</ul>
+							</fieldset>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+			<!-- step01 -->
+		<div class="step01">
+			<ul class="clearfix">
+				<li>
+					<img src="images/03travel(1).jpg" alt="">
+					<div class="steptxt">
+						<p>프랑스
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
 				</li>
 				<li>
-					<form action="update.php" class="f_layer">		
-						<fieldset>
-							<legend>여행일정</legend>
-							<ul>
-								<li>
-									<label for="golo">가고싶은 나라를 선택하세요</label>
-									<select name="nara" id="golo">
-										<option value="">선택하세요</option>
-										<option value="말레이시아">말레이시아</option>
-										<option value="일본">일본</option>
-										<option value="싱가폴">싱가폴</option>
-									</select>
-								</li>
-								<li>
-									<div class="date_left">
-										<label for="sdate">출발일</label>
-										<input type="date" id="sdate">
-									</div>
-									<div class="date_right">
-										<label for="edate">도착일</label>
-										<input type="date" id="edate">
-									</div>
-								</li>
-								<li>
-									<div class="grade">
-										<label for="cgrade">좌석등급</label>
-										<select name="cgrade" id="cgrade">
-											<option value="비지니스">비지니스</option>
-											<option value="이코노미">이코노미</option>
-										</select>
-									</div>
-									<div class="numpeople01">
-										<label for="num">성인</label>
-										<input type="number" id="num" placeholder="2">
-									</div>
-									<div class="numpeople02">
-										<label for="num">아이</label>
-										<input type="number" id="num" placeholder="1">
-									</div>
-								</li>
-								<li>
-									<div class="btn_search">
-										<a href="#"><img src="images/search.png" alt="">검색하기</a>
-									</div>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
+					<img src="images/03travel(2).jpg" alt="">
+					<div class="steptxt">
+						<p>일본
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
+				</li>
+			</ul>
+		<div class="step02">
+			<ul class="clearfix">
+				<li>
+					<img src="images/03travel(3).jpg" alt="">
+					<div class="steptxt">
+						<p>HILLTON HOTEL (PARIS)
+						<span class="star">★★★</span>★★</p>
+					</div>
 				</li>
 				<li>
-					<form action="update.php" class="f_layer">		
-						<fieldset>
-							<legend>여행일정</legend>
-							<ul>
-								<li>
-									<label for="golo">가고싶은 나라를 선택하세요</label>
-									<select name="nara" id="golo">
-										<option value="">선택하세요</option>
-										<option value="말레이시아">말레이시아</option>
-										<option value="일본">일본</option>
-										<option value="싱가폴">싱가폴</option>
-									</select>
-								</li>
-								<li>
-									<div class="date_left">
-										<label for="sdate">출발일</label>
-										<input type="date" id="sdate">
-									</div>
-									<div class="date_right">
-										<label for="edate">도착일</label>
-										<input type="date" id="edate">
-									</div>
-								</li>
-								<li>
-									<div class="grade">
-										<label for="cgrade">좌석등급</label>
-										<select name="cgrade" id="cgrade">
-											<option value="비지니스">비지니스</option>
-											<option value="이코노미">이코노미</option>
-										</select>
-									</div>
-									<div class="numpeople01">
-										<label for="num">성인</label>
-										<input type="number" id="num" placeholder="2">
-									</div>
-									<div class="numpeople02">
-										<label for="num">아이</label>
-										<input type="number" id="num" placeholder="1">
-									</div>
-								</li>
-								<li>
-									<div class="btn_search">
-										<a href="#"><img src="images/search.png" alt="">검색하기</a>
-									</div>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
+					<img src="images/03travel(4).jpg" alt="">
+					<div class="steptxt">
+						<p>관광명소(디즈니랜드)
+						<span class="star">★★★</span>★★</p>
+					</div>
 				</li>
 				<li>
-					<form action="update.php" class="f_layer">		
-						<fieldset>
-							<legend>여행일정</legend>
-							<ul>
-								<li>
-									<label for="golo">가고싶은 나라를 선택하세요</label>
-									<select name="nara" id="golo">
-										<option value="">선택하세요</option>
-										<option value="말레이시아">말레이시아</option>
-										<option value="일본">일본</option>
-										<option value="싱가폴">싱가폴</option>
-									</select>
-								</li>
-								<li>
-									<div class="date_left">
-										<label for="sdate">출발일</label>
-										<input type="date" id="sdate">
-									</div>
-									<div class="date_right">
-										<label for="edate">도착일</label>
-										<input type="date" id="edate">
-									</div>
-								</li>
-								<li>
-									<div class="grade">
-										<label for="cgrade">좌석등급</label>
-										<select name="cgrade" id="cgrade">
-											<option value="비지니스">비지니스</option>
-											<option value="이코노미">이코노미</option>
-										</select>
-									</div>
-									<div class="numpeople01">
-										<label for="num">성인</label>
-										<input type="number" id="num" placeholder="2">
-									</div>
-									<div class="numpeople02">
-										<label for="num">아이</label>
-										<input type="number" id="num" placeholder="1">
-									</div>
-								</li>
-								<li>
-									<div class="btn_search">
-										<a href="#"><img src="images/search.png" alt="">검색하기</a>
-									</div>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
+					<img src="images/03travel(5).jpg" alt="">
+					<p class="hk">HONGKONG</p>
+					<div class="weathertxt">
+						<p>20℃ 구름조금</p>
+						<span>습도 60% 바람 남남동 2m/s</span>
+					</div>
 				</li>
-			</ul>			
+				<li>
+					<img src="images/03travel(6).jpg" alt="">
+					<div class="facebook_txt">
+						"해외여행은 처음이였는데,<br>
+						수삐고잉 덕분에 무사히<br>
+						다녀올 수 있었어요."
+						<div class="facebook_txt02">
+							<p style="color:#44619d; font-weight: bold">프랑스파리 자유 여행<br>
+							<span class="star">★★★</span>★★</p>
+						</div>
+						
+					</div>
+					<div class="steptxt_facebook">
+						<p>facebook 여행후기</p>
+						<span>(임정희님)</span>					
+					</div>
+				</li>
+			</ul>
+		</div>		
+		<div class="step03">
+			<ul class="clearfix">
+				<li>
+					<img src="images/03travel(7).jpg" alt="">
+					<div class="steptxt">
+						<p>프랑스
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
+				</li>
+				<li>
+					<img src="images/03travel(8).jpg" alt="">
+					<div class="steptxt">
+						<p>일본
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
+				</li>
+				<li>
+					<img src="images/03travel(9).jpg" alt="">
+					<div class="steptxt">
+						<p>일본
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
+				</li>
+				<li>
+					<img src="images/03travel(10).jpg" alt="">
+					<div class="steptxt">
+						<p>일본
+						<span>￦1,900,000~</span>
+						>
+						</p>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</section>
+
 </div>
+
 </body>
 </html>
 

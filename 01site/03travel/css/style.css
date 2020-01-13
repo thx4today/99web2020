@@ -10,7 +10,6 @@
 }
 #header{
 	width: 100%;
-	height: 90px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -97,10 +96,10 @@ fieldset .inp-field{
 	float: left;
 	width: 163.33px;
 	border-right: 1px solid #ddd;
-		position: relative;
-		overflow: hidden;
-}/*
-.navWrap>nav.nav>ul>li:hover a{
+	position: relative;
+	overflow: hidden;
+}
+/*.navWrap>nav.nav>ul>li:hover a{
 	background-color: #0868a4;
 	color: #fff;
 	transition: 0.5s;
@@ -140,12 +139,27 @@ fieldset .inp-field{
 	-webkit-background-size: cover;
 	background-size: cover;
 }
+
+div.airballoon{
+	position: absolute;
+	/*이름*/ animation-name: myani;
+	/*동작시간*/animation-duration: 2s;
+	/*반복횟수*/animation-iteration-count:infinite; 
+	/*방향*/animation-direction: alternate;
+	animation-timing-function: linear /*ease*/;
+}
+@keyframes myani{
+	from{left:200px;top:300px;}
+	to{left:200px;top:350px;}
+}
+div.airballoon img{
+}
 section{
-	top: 120px;
 	width: 985px;
-	height: 1200px;
 	margin: 0 auto;
 	position: relative;
+	height: 1200px;
+	_background-color: gold;
 }
 section>.section_text{	
 }
@@ -154,25 +168,46 @@ section>.section_text{
 	right: -100px;
 	top: 120px;
 }*/
-/*예약시작*/
+/*예약 pager시작*/
+.reserve{
+	margin-bottom: 15px;
+	background-color: #fff;
+	width: 485px;
+}
+.slider_pager{
+	float: left;
+	width: 135px;
+}
+.slider_pager a{
+	display: block;
+	line-height: 75px;
+	text-align: center;
+	background-color: #0199cb;
+	color: #000;
+	text-align: center;
+}
+.slider_pager li{	
+	border-bottom: 1px solid #00497c;
+}
+.slider_pager li:last-child {
+	border-bottom: none;
+}
+.slider_pager a.active{
+	background-color: #fff;
+	color: #404040;
+}
 .sliderWrap{
-	width:
-	 485px;
+	width: 485px;
 	height: 300px;
 	background-color: pink;
-	overflow: hidden;
 }
-.sliderWrap>.slider>ul{}
-.sliderWrap>.slider>ul>li{
+.bx-wrapper{
 	float: right;
-	margin: 0 auto;
-}
-.sliderWrap>.slider>ul>li>.f_layer{
 	width: 350px;
 }
-.sliderWrap>.slider>ul>li>.f_layer>fieldset{
+/*예약 시작*/
+fieldset{
 	border:0 none;
-	border-radius: 0 !important;
 }
 .sliderWrap>.slider>ul>li>.f_layer>fieldset>legend{
 	display: block;
@@ -190,6 +225,7 @@ section>.section_text{
 	float: left;
 	width: 150px;
 	margin-right: 5px;
+	_background-color: #f00;
 }
 /*선택창 좌석등급*/
 .f_layer fieldset .sleft,
@@ -198,6 +234,7 @@ section>.section_text{
 	float: left;
 	width: 140px;
 	margin-right: 10px;
+	_background-color: #0f0;
 }
 
 /*선택창 1,4*/
@@ -208,14 +245,7 @@ section>.section_text{
 	font-size:1em;
 	text-indent: 8px;
 	border-radius: 5px;
-}
-.f_layer fieldset select .grade{
-	display: block;
-	width: 100%;
-	height: 40px;
-	font-size:1em;
-	text-indent: 8px;
-	border-radius: 5px;
+	_background-color: #00f;
 }
 .f_layer fieldset .sleft input,
 .f_layer fieldset .sright input,
@@ -250,6 +280,7 @@ section>.section_text{
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+/*검색버튼 시작*/
 .btn_search{
 	float: left;
 	width: 310px;
@@ -280,4 +311,158 @@ section>.section_text{
 	position: absolute;
 	margin-top: 8px;
 	margin-left: -30px;
+}
+/*검색버튼 끝*/
+/*step01*/
+.step01{
+	width: 980px;
+	height: 240px;
+}
+.step01>ul>li{
+	float: left;
+	position: relative;
+	width: 233px;
+	height: 240px;
+	margin : 0 15px 15px 0 ;
+	overflow: hidden;
+}
+.step01>ul>li>img{
+	height: 100%;
+}
+.step01>ul>li>.steptxt{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 233.75px;
+	background-color: #152630;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;  
+	cursor : pointer;
+}
+.steptxt p{
+	text-align: center;
+}
+.steptxt span{
+	color: #529351;
+	font-weight: bold;
+}
+/*step02*/
+.step02{
+	width: 980px;
+	height: 240px;
+}
+.step02>ul>li{
+	float: left;
+	position: relative;
+	width: 233px;
+	height: 240px;
+	margin : 0 15px 15px 0 ;
+	overflow: hidden;
+}
+.step02>ul>li:last-child{
+	margin-right: 0;
+}
+.step02>ul>li>img{
+	height: 100%;
+}
+.step02>ul>li>.steptxt{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	line-height: 20px;
+	width: 233.75px;
+	background-color: #152630;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;  
+	cursor : pointer;
+}
+.steptxt p{
+	text-align: center;
+}
+.star{
+	color: gold !important;
+}
+
+.weathertxt{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	line-height: 20px;
+	width: 233.75px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;  
+	cursor : pointer;
+	background-color: rgba(0,0,0,0.4);
+	padding-left: 10px;
+}
+
+.facebook_txt{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	line-height: 25px;padding-bottom: 10px;
+}
+.steptxt_facebook{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	line-height: 20px;
+	width: 233.75px;
+	background-color: #152630;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;  
+	cursor : pointer;
+	background-color: #44619d;
+	padding-left: 10px;
+}
+.steptxt_facebook span,
+.weathertxt span{
+	font-size: 15px;
+}
+.facebook_txt02{
+	font-size: 14px;
+	margin-top: 10px;
+}
+/*step03*/
+.step03{
+	width: 980px;
+	height: 240px;
+}
+.step03>ul>li{
+	float: left;
+	position: relative;
+	width: 233px;
+	height: 240px;
+	margin : 0 15px 15px 0 ;
+	overflow: hidden;
+}
+.step03>ul>li:last-child{
+	margin-right: 0;
+}
+.step03>ul>li>img{
+	height: 100%;
+}
+.step03>ul>li>.steptxt{
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 233.75px;
+	background-color: #152630;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;  
+	cursor : pointer;
+}
+.steptxt p{
+	text-align: center;
+}
+.steptxt span{
+	color: #529351;
+	font-weight: bold;
 }
