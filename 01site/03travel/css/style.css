@@ -156,15 +156,30 @@ div.airballoon{
 }
 div.airballoon02{
 	position: absolute;
-	/*이름*/ animation-name: myanit;
+	/*이름*/ animation-name: myanitwo;
 	/*동작시간*/animation-duration: 4s;
 	/*반복횟수*/animation-iteration-count:infinite; 
 	/*방향*/animation-direction: alternate;
 	animation-timing-function: linear /*ease*/;
 }
-@keyframes myanit{
+@keyframes myanitwo{
 	from{left: 200px;top:200px;}
 	to{left: 200px;top:300px;}
+}
+div.airballoon03{
+	position: absolute;
+	/*이름*/ animation-name: myanithree;
+	/*동작시간*/animation-duration: 8s;
+	/*반복횟수*/animation-iteration-count:infinite; 
+	/*방향*/animation-direction: normal;
+	animation-timing-function: linear /*ease*/;
+}
+div.airballoon03 img{
+	width: 100px;
+}
+@keyframes myanithree{
+	from{left: 999px;bottom: -9px;}
+	to{left: -999px;bottom:999px;}
 }
 section{
 	width: 985px;
@@ -328,7 +343,6 @@ fieldset{
 /*step01*/
 .step01{
 	width: 980px;
-	height: 240px;
 }
 .step01>ul>li{
 	float: left;
@@ -363,7 +377,6 @@ fieldset{
 /*step02*/
 .step02{
 	width: 980px;
-	height: 240px;
 }
 .step02>ul>li{
 	float: left;
