@@ -134,6 +134,7 @@ fieldset .inp-field{
 
 /*section 시작*/
 .sectionWrap{
+	padding-top: 40px;
 	background-image: url(../images/01배경.jpg);
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -142,17 +143,28 @@ fieldset .inp-field{
 
 div.airballoon{
 	position: absolute;
+	left: 50%;
 	/*이름*/ animation-name: myani;
 	/*동작시간*/animation-duration: 2s;
 	/*반복횟수*/animation-iteration-count:infinite; 
 	/*방향*/animation-direction: alternate;
-	animation-timing-function: linear /*ease*/;
+	animation-timing-function: cubic-bezier(0.3, 0.04, 0.47, 0.82) /*ease*/;
 }
 @keyframes myani{
-	from{left:200px;top:300px;}
-	to{left:200px;top:350px;}
+	from{top:250px;}
+	to{top:300px;}
 }
-div.airballoon img{
+div.airballoon02{
+	position: absolute;
+	/*이름*/ animation-name: myanit;
+	/*동작시간*/animation-duration: 4s;
+	/*반복횟수*/animation-iteration-count:infinite; 
+	/*방향*/animation-direction: alternate;
+	animation-timing-function: linear /*ease*/;
+}
+@keyframes myanit{
+	from{left: 200px;top:200px;}
+	to{left: 200px;top:300px;}
 }
 section{
 	width: 985px;

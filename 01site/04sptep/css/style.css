@@ -1,0 +1,94 @@
+@charset "utf-8";
+	<style>
+		nav.gnb{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: gold;
+			position: relative;
+			z-index: 1;
+		}
+		nav.gnb>ul>li{
+			float: left;
+			width: 20%;
+			height: 40px;
+			position: relative;
+		}
+		nav.gnb>ul>li>a{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+		}		
+		nav.gnb>ul>li:hover{
+			background-color: red;
+			transition: .5s
+		}
+		/*세로메뉴1개*/
+		nav.gnb>ul>li:hover .submenu{display: block;}
+		/*가로메뉴*/
+		/*nav.gnb>ul>li:hover .submenu{
+			display: block;
+			background-color: red;
+			transition: .5s;} 
+		/*전체메뉴*/
+		/*nav.gnb>ul:hover .submenu{
+			display: block;}*/
+		/*.submenu{
+			background-color: orange;
+			text-align: center;
+			line-height: 40px;
+		}*/
+
+		/*submenu*/
+		.submenu{display:none;}
+	
+		.submenu>li{background-color: #fff;}
+		.submenu>li>a{display: block;text-align:center;line-height: 35px;}
+		.submenu>li:hover{background-color: orange;}
+/*	nav.gnb>ul>li:first-child .submenu{display: block;}
+		
+		/*visual*/
+		.visual{
+			width: 1920px;
+			height: 885px;
+			margin: 0 auto;
+
+		}
+		.visual>ul>li>img{
+			width: 100%;
+		}
+		.visual>.slider{}
+		.visual>.slider>li{}
+		.visual>.slider>li>a{}
+		.bx-wrapper {
+		    box-shadow: 0 none;
+		    border: 0 none;
+		    background: 0 none;
+		}
+		/*controls*/
+		.nextBtn, .prevBtn{
+			position: absolute; 
+			top: 50%;
+			margin-top: -50px;
+			cursor: pointer;
+			_background-color: rgba(0,0,0,0.4);}
+		.nextBtn{right: 0;}
+		/*pager*/
+		.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		    bottom: 30px;
+		}
+		.bx-wrapper .bx-pager.bx-default-pager a:hover, 
+		.bx-wrapper .bx-pager.bx-default-pager a.active, 
+		.bx-wrapper .bx-pager.bx-default-pager a:focus {
+	    	background: #f00;
+    	}
+    	.bx-wrapper .bx-pager.bx-default-pager a {
+		    background: #666;
+		    width: 20px;
+		    height: 3px;
+		    margin: 0 5px;
+		    outline: 0;
+		    -moz-border-radius: 0px;
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		}
+	</style>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+  	<script src="js/jquery-3.1.1.min.js"></script>
+ 	<script src="js/jquery.bxslider.js"></script>
+	<script>
+	  $(document).ready(function(){
+      var mySlide = $('.slider').bxSlider({      	
+      	auto:true,
+      	controls:false
+      });
+      $('.nextBtn').click(function(){
+      	mySlide.goToNextSlide();
+      });
+      $('.prevBtn').click(function(){
+      	mySlide.goToPrevSlide();
+      });
+      });
+	</script>
+
+	<style>
+		nav.gnb{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: gold;
+			position: relative;
+			z-index: 1;
+		}
+		nav.gnb>ul>li{
+			float: left;
+			width: 20%;
+			height: 40px;
+			position: relative;
+		}
+		nav.gnb>ul>li>a{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+		}		
+		nav.gnb>ul>li:hover{
+			background-color: red;
+			transition: .5s
+		}
+		/*세로메뉴1개*/
+		nav.gnb>ul>li:hover .submenu{display: block;}
+		/*가로메뉴*/
+		/*nav.gnb>ul>li:hover .submenu{
+			display: block;
+			background-color: red;
+			transition: .5s;} 
+		/*전체메뉴*/
+		/*nav.gnb>ul:hover .submenu{
+			display: block;}*/
+		/*.submenu{
+			background-color: orange;
+			text-align: center;
+			line-height: 40px;
+		}*/
+
+		/*submenu*/
+		.submenu{display:none;}
+	
+		.submenu>li{background-color: #fff;}
+		.submenu>li>a{display: block;text-align:center;line-height: 35px;}
+		.submenu>li:hover{background-color: orange;}
+/*	nav.gnb>ul>li:first-child .submenu{display: block;}
+		
+		/*visual*/
+		.visual{
+			width: 1920px;
+			height: 885px;
+			margin: 0 auto;
+
+		}
+		.visual>ul>li>img{
+			width: 100%;
+		}
+		.visual>.slider{}
+		.visual>.slider>li{}
+		.visual>.slider>li>a{}
+		.bx-wrapper {
+		    box-shadow: 0 none;
+		    border: 0 none;
+		    background: 0 none;
+		}
+		/*controls*/
+		.nextBtn, .prevBtn{
+			position: absolute; 
+			top: 50%;
+			margin-top: -50px;
+			cursor: pointer;
+			_background-color: rgba(0,0,0,0.4);}
+		.nextBtn{right: 0;}
+		/*pager*/
+		.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		    bottom: 30px;
+		}
+		.bx-wrapper .bx-pager.bx-default-pager a:hover, 
+		.bx-wrapper .bx-pager.bx-default-pager a.active, 
+		.bx-wrapper .bx-pager.bx-default-pager a:focus {
+	    	background: #f00;
+    	}
+    	.bx-wrapper .bx-pager.bx-default-pager a {
+		    background: #666;
+		    width: 20px;
+		    height: 3px;
+		    margin: 0 5px;
+		    outline: 0;
+		    -moz-border-radius: 0px;
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="gnb">
+		<!-- ul.clearfix>li*5>a[#]>{menu$}^ul.submenu>li*4>a[#]>{submenu0$} -->
+		<ul class="clearfix">
+			<li>
+				<a href="#">menu1</a>
+				<ul class="submenu">
+					<li><a href="#">submenu0101</a></li>
+					<li><a href="#">submenu0102</a></li>
+					<li><a href="#">submenu0103</a></li>
+					<li><a href="#">submenu0104</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu2</a>
+				<ul class="submenu">
+					<li><a href="#">submenu0201</a></li>
+					<li><a href="#">submenu0202</a></li>
+					<li><a href="#">submenu0203</a></li>
+					<li><a href="#">submenu0204</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu3</a>
+				<ul class="submenu">
+					<li><a href="#">submenu0301</a></li>
+					<li><a href="#">submenu0302</a></li>
+					<li><a href="#">submenu0303</a></li>
+					<li><a href="#">submenu0304</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu4</a>
+				<ul class="submenu">
+					<li><a href="#">submenu0401</a></li>
+					<li><a href="#">submenu0402</a></li>
+					<li><a href="#">submenu0403</a></li>
+					<li><a href="#">submenu0404</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu5</a>
+				<ul class="submenu">
+					<li><a href="#">submenu0501</a></li>
+					<li><a href="#">submenu0502</a></li>
+					<li><a href="#">submenu0503</a></li>
+					<li><a href="#">submenu0504</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="visual">
+		<ul class="slider">
+			<li>
+				<img src="images/mountains-3959204_1920.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/mountains-3959204_1920.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/mountains-3959204_1920.jpg" alt="">
+			</li>
+		</ul>
+		<div class="prevBtn">
+			<img src="images/btn_left.png" alt="">
+		</div>
+		<div class="nextBtn">
+			<img src="images/btn_right.png" alt="">
+		</div>
+	</div>
+</body>
+</html>
