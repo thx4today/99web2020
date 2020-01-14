@@ -4,9 +4,11 @@
 /*header 시작*/
 .wrap{
 	width: 100%;
+	height: 90px;
 	background: url(../images/img_header.jpg) center; 
 	background-repeat: no-repeat;
 	background-color: #0868a4;
+	margin-bottom: 40px;
 }
 #header{
 	width: 100%;
@@ -340,6 +342,25 @@ fieldset{
 	margin-left: -30px;
 }
 /*검색버튼 끝*/
+/*광고 문구*/
+.txt_section{
+	position: absolute;
+	left:52%;
+	top: 160px;
+	z-index: 1;
+}
+.txt_section>p{
+	font-size: 60px;
+	font-weight: bold;
+	color: #152630;
+}
+.txt_section>p>span{
+	text-decoration: underline;
+}
+.txt_section>.txt_section02{
+	font-size: 35px
+}
+
 /*step01*/
 .step01{
 	width: 980px;
@@ -457,6 +478,7 @@ fieldset{
 .step03{
 	width: 980px;
 	height: 240px;
+	margin-bottom: 15px;
 }
 .step03>ul>li{
 	float: left;
@@ -469,25 +491,82 @@ fieldset{
 .step03>ul>li:last-child{
 	margin-right: 0;
 }
-.step03>ul>li>img{
-	height: 100%;
+.step0301>img{
+	height: 240px;
 }
-.step03>ul>li>.steptxt{
+/*0301*/
+.steptxt0301{
+	display: block;
 	position: absolute;
-	bottom: 0;
-	height: 50px;
-	line-height: 50px;
-	width: 233.75px;
-	background-color: #152630;
+	top: 20px;
+	width: 233px;
+	height: 240px;
+	text-align: center;
 	color: #fff;
-	font-weight: bold;
-	font-size: 18px;  
-	cursor : pointer;
 }
-.steptxt p{
+.step0301>.cover{
+	width: 233px;
+	height: 240px;
+	display: block;
+	position: absolute;
+	background-color:rgba(0, 100, 80, 0.45)
+}
+.steptxt0301>p{
+	font-size: 20px;
+	font-weight: bold;
+}
+.step0301:hover .steptxt0301{
+	top: 150px;
+	transition: 0.6s;
+}
+.overlay{
+	_display: none;
+	position: absolute;
+	top: 100%;
+	width: 233px;
+	height: 240px;
+	background-color:rgba(0, 0, 0, 0.45);
+}
+.step0301:hover .overlay{
+	_display: block;
+	top: 0;
+	transition: 0.6s
+}
+.ico_plus{
+	position: absolute;
+	width: 233px;
+	height: 240px;
+	top: 96.5px;
+	left: 100px;
+	z-index: 1;
+}
+.ico_plus img{
+	width: 40px;
+	height: 40px;
+}
+
+/*footer*/
+footer{
+	width: 980px;
+	height: 150px;
+	margin: 0 auto;
+	background-color: pink;
+}
+footer>ul>li{
+	float: left;
+	width: 130px;
 	text-align: center;
 }
-.steptxt span{
-	color: #529351;
+footer>ul>li>a{	
+	line-height: 40px;
 	font-weight: bold;
+	color: #ccc;
+}
+footer>address{
+}
+footer>address>ul>li{
+	float: left;
+	width: 260px;
+	    font-style: normal; ;
+
 }
