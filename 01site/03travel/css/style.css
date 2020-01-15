@@ -137,7 +137,7 @@ fieldset .inp-field{
 /*section 시작*/
 .sectionWrap{
 	padding-top: 40px;
-	background-image: url(../images/01배경.jpg);
+	background-image: url(../images/01bg.png);
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -224,6 +224,19 @@ section>.section_text{
 .slider_pager a.active{
 	background-color: #fff;
 	color: #404040;
+	background-image: none;
+}
+.slider_pager a img.out{display: block;}
+.slider_pager a img.active{display: none;}
+.slider_pager  a.active img.out{display: none;}
+.slider_pager  a.active img.active{display: block;}
+
+.slider_pager>ul>li{}
+.slider_pager>ul>li>a{}
+.slider_pager>ul>li>a>img{
+	width: 40px;
+	top: 20px;
+	position: absolute;
 }
 .sliderWrap{
 	width: 485px;
@@ -342,6 +355,7 @@ fieldset{
 	margin-left: -30px;
 }
 /*검색버튼 끝*/
+
 /*광고 문구*/
 .txt_section{
 	position: absolute;
@@ -491,10 +505,10 @@ fieldset{
 .step03>ul>li:last-child{
 	margin-right: 0;
 }
+/*0301*/
 .step0301>img{
 	height: 240px;
 }
-/*0301*/
 .steptxt0301{
 	display: block;
 	position: absolute;
@@ -550,23 +564,24 @@ footer{
 	width: 980px;
 	height: 150px;
 	margin: 0 auto;
-	background-color: pink;
 }
 footer>ul>li{
 	float: left;
-	width: 130px;
-	text-align: center;
+	margin-right: 50px;
+}
+footer>ul>li:hover a{
+	color: #ddd;
 }
 footer>ul>li>a{	
 	line-height: 40px;
 	font-weight: bold;
-	color: #ccc;
 }
 footer>address{
+	font-size:14px;
 }
 footer>address>ul>li{
 	float: left;
-	width: 260px;
-	    font-style: normal; ;
-
+    font-style: normal;
+    margin-right: 20px;
+    line-height: 30px;`
 }

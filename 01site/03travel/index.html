@@ -11,9 +11,13 @@
 
 	<script>
 		$(document).ready(function(){
-			$(".slider").bxSlider({				
+			$(".slider").bxSlider({
+				controls:false,				
 				mode:"vertical",
-				/*pager 바꾸기*/pagerCustom:".bx-pager"
+				/*pager 바꾸기*/pagerCustom:".slider_pager"
+			});
+			$(".sliderOne").bxSlider({
+				pager:false
 			});
 		});
 	</script>
@@ -138,14 +142,40 @@
 		<div style="_display:none" class="reserve clearfix">
 			<!-- 예약 pager -->
 			<div class="slider_pager">
-				<div class="bx-pager clearfix">
-					<ul>
-						<li><a href="#" data-slide-index="0">공항예약</a></li>
-						<li><a href="#" data-slide-index="1">호텔예약</a></li>
-						<li><a href="#" data-slide-index="2">렌트카</a></li>
-						<li><a href="#" data-slide-index="3">휴양지</a></li>
-					</ul>
-				</div>
+				<ul class="clearfix">
+					<li>
+						<a href="#" data-slide-index="0">
+						<!-- tap아이콘 영역 -->
+							<img src="images/012-rocket.png" alt="" class="out">
+							<img src="images/012-rocket_inverse.png" alt="" class="active">
+							공항예약
+						</a>
+					</li>
+					<li>
+						<a href="#" data-slide-index="1">
+						<!-- tap아이콘 영역 -->
+							<img src="images/012-rocket.png" alt="" class="out">
+							<img src="images/012-rocket_inverse.png" alt="" class="active">
+							호텔예약
+						</a>
+					</li>
+					<li>
+						<a href="#" data-slide-index="2">
+						<!-- tap아이콘 영역 -->
+							<img src="images/012-rocket.png" alt="" class="out">
+							<img src="images/012-rocket_inverse.png" alt="" class="active">
+							렌트카
+						</a>
+					</li>
+					<li>
+						<a href="#" data-slide-index="3">
+						<!-- tap아이콘 영역 -->
+							<img src="images/012-rocket.png" alt="" class="out">
+							<img src="images/012-rocket_inverse.png" alt="" class="active">
+							휴양지
+						</a>
+					</li>
+				</ul>
 			</div>
 			<!-- 예약 시작 -->
 			<div class="sliderWrap">
