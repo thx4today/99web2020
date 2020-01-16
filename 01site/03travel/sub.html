@@ -2,14 +2,31 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>문서 제목</title>
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider({
+				controls:false,				
+				mode:"vertical",
+				/*pager 바꾸기*/pagerCustom:".slider_pager",
+				touchEnabled:false
+			});
+			$(".sliderOne").bxSlider({
+				pager:false
+			});
+		});
+	</script>
+
 </head>
 <body>
-	
-</body>
-</html>
 <!-- 헤더 시작 -->
-<div class="wrap">
+<div class="header_wrap">
 	<header id="header">
 		<div class="header_top clearfix">
 			<h1><a href=""><img src="images/logo.png" alt=""></a></h1>
@@ -52,7 +69,7 @@
 				<ul class="clearfix">
 					<li>
 						<a href="#">여행도시</a>
-						<a href="">
+						<a href="#">
 							<div class="overlay">
 								<div class="text">여행도시</div>
 							</div>
@@ -84,9 +101,9 @@
 					</li>
 					<li>
 						<a href="#">회사소개</a>
-						<a href="">
+						<a href="sub.html">
 							<div class="overlay">
-								<div class="text">여행도시</div>
+								<div class="text">회사소개</div>
 							</div>
 						</a>
 					</li>
@@ -94,7 +111,7 @@
 						<a href="#">커뮤니티</a>
 						<a href="">
 							<div class="overlay">
-								<div class="text">여행도시</div>
+								<div class="text">커뮤니티</div>
 							</div>
 						</a>
 					</li>
@@ -102,5 +119,54 @@
 			</div>
 		</nav>
 	</header>
-	<!-- 헤더 끝 -->
 </div>
+<!-- 헤더 끝 -->
+<div class="section_wrap">
+	<div class="sub_img"></div>	
+	<section class="sub">		
+		<div class="sub_title">
+			<div class="subtxt">
+				<p>COMPANY</p>
+				<span>수삐고잉과 여행을 떠나세요</span>
+			</div>
+			<div class="image">
+				<img src="images/sub_content.jpg" alt="">
+			</div>
+		</div>
+	</section>
+</div>
+<footer>
+	<ul class="clearfix">
+		<li>
+			<a href="#">이용약관</a>
+		</li>
+		<li>
+			<a href="#">개인정보취급방침</a>
+		</li>
+		<li>
+			<a href="#">사이트맵</a>
+		</li>
+		<li>
+			<a href="#">고객센터</a>
+		</li>
+		<li>
+			<a href="#">광고 및 제휴문의</a>
+		</li>
+	</ul>
+	<address>
+		<ul class="clearfix">
+			<li>						
+				123-456 서울시 구로구 구로동 구구건물 4층
+			</li>
+			<li>
+				사업자등록번호 : 999-99-999999 대표이사:김수희
+			</li>
+			<li>
+				전화번호 : 00-000-0000
+			</li>
+		</ul>
+		COPYRIHTⓒ2020 SOPPIGOING ALL RIGHTS RESERVED.
+	</address>
+</footer>
+
+</body>

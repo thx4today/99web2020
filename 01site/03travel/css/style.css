@@ -1,14 +1,13 @@
 @charset "utf-8";	
 
-
 /*header 시작*/
-.wrap{
+.header_wrap{
 	width: 100%;
 	height: 90px;
 	background: url(../images/img_header.jpg) center; 
 	background-repeat: no-repeat;
 	background-color: #0868a4;
-	margin-bottom: 40px;
+	position: relative;
 }
 #header{
 	width: 100%;
@@ -135,11 +134,9 @@ fieldset .inp-field{
 /*--------------------------------------------*/
 
 /*section 시작*/
-.sectionWrap{
-	padding-top: 40px;
+body.index{
 	background-image: url(../images/01bg.png);
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 }
 
@@ -212,7 +209,7 @@ section>.section_text{
 	line-height: 75px;
 	text-align: center;
 	background-color: #0199cb;
-	color: #000;
+	color: #fff;
 	text-align: center;
 }
 .slider_pager li{	
@@ -222,8 +219,8 @@ section>.section_text{
 	border-bottom: none;
 }
 .slider_pager a.active{
-	background-color: #fff;
-	color: #404040;
+	background-color: #000;
+	color: #fff;
 	background-image: none;
 }
 .slider_pager a img.out{display: block;}
@@ -236,12 +233,14 @@ section>.section_text{
 .slider_pager>ul>li>a>img{
 	width: 40px;
 	top: 20px;
-	position: absolute;
+	float: left;
+	margin-top: 20px;
+	margin-left: 12px
 }
 .sliderWrap{
 	width: 485px;
 	height: 300px;
-	background-color: pink;
+	margin-top: 120px;
 }
 .bx-wrapper{
 	float: right;
@@ -267,7 +266,6 @@ fieldset{
 	float: left;
 	width: 150px;
 	margin-right: 5px;
-	_background-color: #f00;
 }
 /*선택창 좌석등급*/
 .f_layer fieldset .sleft,
@@ -276,7 +274,6 @@ fieldset{
 	float: left;
 	width: 140px;
 	margin-right: 10px;
-	_background-color: #0f0;
 }
 
 /*선택창 1,4*/
@@ -287,7 +284,6 @@ fieldset{
 	font-size:1em;
 	text-indent: 8px;
 	border-radius: 5px;
-	_background-color: #00f;
 }
 .f_layer fieldset .sleft input,
 .f_layer fieldset .sright input,
@@ -360,7 +356,7 @@ fieldset{
 .txt_section{
 	position: absolute;
 	left:52%;
-	top: 160px;
+	top: 180px;
 	z-index: 1;
 }
 .txt_section>p{
@@ -542,9 +538,7 @@ fieldset{
 	background-color:rgba(0, 0, 0, 0.45);
 }
 .step0301:hover .overlay{
-	_display: block;
 	top: 0;
-	transition: 0.6s
 }
 .ico_plus{
 	position: absolute;
@@ -553,12 +547,16 @@ fieldset{
 	top: 96.5px;
 	left: 100px;
 	z-index: 1;
+	transform: rotate(0deg);
+	transition: 0.6s
 }
 .ico_plus img{
 	width: 40px;
 	height: 40px;
 }
-
+.step0301:hover .ico_plus{
+	transform: rotate(360deg);
+}
 /*footer*/
 footer{
 	width: 980px;
@@ -584,4 +582,58 @@ footer>address>ul>li{
     font-style: normal;
     margin-right: 20px;
     line-height: 30px;`
+}
+/*서브페이지 시작*/
+body{
+	width: 100%;
+	background-image: url(../images/bg_dot.gif);
+	background-repeat: repeat;
+	background-position: center;
+	background-size: auto, cover/*contain */;
+	position: relative;
+}
+.section_wrap{
+	padding-top: 63px;
+	position: relative;
+}
+.sub_img{	
+	width: 100%;
+	height: 290px;
+	position: absolute;
+	background-image: url(../images/subimg03.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+section.sub{
+	width: 980px;
+	position: relative;
+	left: 50%;
+	margin-left: -500px;
+}
+.sub_title{
+	width: 980px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding-top: 40PX;
+}
+.subtxt{
+	margin-bottom: 40px;
+}
+.subtxt>p{
+	text-align: center;
+	font-size: 60px;
+	font-weight: bold;
+	color: #fff;
+}
+.subtxt>span{
+	font-size: 20px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+.sub_title>.image{
+	border: 10px  solid #006599;
+}
+.sub_title>.image>img{
+	width: 100%;
 }
