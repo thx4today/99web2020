@@ -1,6 +1,6 @@
 /**
- * bxSlider v4.2.1d
- * Copyright 2013-2017 Steven Wanderski
+ * bxSlider v4.2.12
+ * Copyright 2013-2015 Steven Wanderski
  * Written while drinking Belgian ales and listening to jazz
  * Licensed under MIT (http://opensource.org/licenses/MIT)
  */
@@ -88,8 +88,7 @@
     onSlideAfter: function() { return true; },
     onSlideNext: function() { return true; },
     onSlidePrev: function() { return true; },
-    onSliderResize: function() { return true; },
-	onAutoChange: function() { return true; } //calls when auto slides starts and stops
+    onSliderResize: function() { return true; }
   };
 
   $.fn.bxSlider = function(options) {
@@ -143,7 +142,7 @@
       // store active slide information
       slider.active = { index: slider.settings.startSlide };
       // store if the slider is in carousel mode (displaying / moving multiple slides)
-      slider.carousel = slider.settings.minSlides > 1 || slider.settings.maxSlides > 1;
+      slider.carousel = slider.settings.minSlides > 1 || slider.settings.maxSlides > 1 ? true : false;
       // if carousel, force preloadImages = 'all'
       if (slider.carousel) { slider.settings.preloadImages = 'all'; }
       // calculate the min / max width thresholds based on min / max number of slides
@@ -228,8 +227,7 @@
       });
       // apply css to all slider children
       slider.children.css({
-        // the float attribute is a reserved word in compressors like YUI compressor and need to be quoted #48
-        'float': slider.settings.mode === 'horizontal' ? 'left' : 'none',
+        float: slider.settings.mode === 'horizontal' ? 'left' : 'none',
         listStyle: 'none',
         position: 'relative'
       });
@@ -256,13 +254,7 @@
       slider.active.last = slider.settings.startSlide === getPagerQty() - 1;
       // if video is true, set up the fitVids plugin
       if (slider.settings.video) { el.fitVids(); }
-	  //preloadImages
-	  if (slider.settings.preloadImages === 'none') { 
-		  preloadSelector = null; 
-	  }
-      else if (slider.settings.preloadImages === 'all' || slider.settings.ticker) { 
-		  preloadSelector = slider.children; 
-	  }
+      if (slider.settings.preloadImages === 'all' || slider.settings.ticker) { preloadSelector = slider.children; }
       // only check for control addition if not in "ticker" mode
       if (!slider.settings.ticker) {
         // if controls are requested, add them
@@ -277,11 +269,7 @@
       } else {
         slider.settings.pager = false;
       }
-	  if (preloadSelector === null) {
-        start();
-      } else {
-        loadElements(preloadSelector, start);
-      }
+      loadElements(preloadSelector, start);
     };
 
     var loadElements = function(selector, callback) {
@@ -295,7 +283,7 @@
         $(this).one('load error', function() {
           if (++count === total) { callback(); }
         }).each(function() {
-          if (this.complete || this.src == '') { $(this).trigger('load'); }
+          if (this.complete) { $(this).trigger('load'); }
         });
       });
     };
@@ -329,8 +317,8 @@
       slider.settings.onSliderLoad.call(el, slider.active.index);
       // slider has been fully initialized
       slider.initialized = true;
-      // add the resize call to the window
-      if (slider.settings.responsive) { $(window).on('resize', resizeWindow); }
+      // bind the resize call to the window
+      if (slider.settings.responsive) { $(window).bind('resize', resizeWindow); }
       // if auto is true and has more than 1 page, start the show
       if (slider.settings.auto && slider.settings.autoStart && (getPagerQty() > 1 || slider.settings.autoSlideForOnePage)) { initAuto(); }
       // if ticker is true, start the ticker
@@ -460,7 +448,7 @@
         } else {
           childWidth = slider.children.first().width() + slider.settings.slideMargin;
           slidesShowing = Math.floor((slider.viewport.width() +
-            slider.settings.slideMargin) / childWidth) || 1;
+            slider.settings.slideMargin) / childWidth);
         }
       // if "vertical" mode, slides showing will always be minSlides
       } else if (slider.settings.mode === 'vertical') {
@@ -487,7 +475,6 @@
             breakPoint = counter + getNumberSlidesShowing();
             counter += slider.settings.moveSlides <= getNumberSlidesShowing() ? slider.settings.moveSlides : getNumberSlidesShowing();
           }
-		  return counter;
         }
       // if moveSlides is 0 (auto) divide children length by sides showing, then round up
       } else {
@@ -570,12 +557,12 @@
           // set the property value
           el.css(slider.animProp, propValue);
           if (duration !== 0) {
-            // add a callback method - executes when CSS transition completes
-            el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
+            // bind a callback method - executes when CSS transition completes
+            el.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
               //make sure it's the correct one
               if (!$(e.target).is(el)) { return; }
-              // remove the callback
-              el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+              // unbind the callback
+              el.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
               updateAfterSlideTransition();
             });
           } else { //duration = 0
@@ -588,11 +575,11 @@
           el.css('-' + slider.cssPrefix + '-transition-timing-function', 'linear');
           el.css(slider.animProp, propValue);
           if (duration !== 0) {
-            el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
+            el.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
               //make sure it's the correct one
               if (!$(e.target).is(el)) { return; }
-              // remove the callback
-              el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+              // unbind the callback
+              el.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
               // reset the position
               setPositionProperty(params.resetValue, 'reset', 0);
               // start the loop again
@@ -678,9 +665,9 @@
     var appendControls = function() {
       slider.controls.next = $('<a class="bx-next" href="">' + slider.settings.nextText + '</a>');
       slider.controls.prev = $('<a class="bx-prev" href="">' + slider.settings.prevText + '</a>');
-      // add click actions to the controls
-      slider.controls.next.on('click touchend', clickNextBind);
-      slider.controls.prev.on('click touchend', clickPrevBind);
+      // bind click actions to the controls
+      slider.controls.next.bind('click touchend', clickNextBind);
+      slider.controls.prev.bind('click touchend', clickPrevBind);
       // if nextSelector was supplied, populate it
       if (slider.settings.nextSelector) {
         $(slider.settings.nextSelector).append(slider.controls.next);
@@ -708,7 +695,7 @@
       slider.controls.stop = $('<div class="bx-controls-auto-item"><a class="bx-stop" href="">' + slider.settings.stopText + '</a></div>');
       // add the controls to the DOM
       slider.controls.autoEl = $('<div class="bx-controls-auto" />');
-      // on click actions to the controls
+      // bind click actions to the controls
       slider.controls.autoEl.on('click', '.bx-start', clickStartBind);
       slider.controls.autoEl.on('click', '.bx-stop', clickStopBind);
       // if autoControlsCombine, insert only the "start" control
@@ -907,22 +894,24 @@
         }
       }
     };
-	/* auto start and stop functions */
-	var windowFocusHandler = function() { el.startAuto(); };
-	var windowBlurHandler = function() { el.stopAuto(); };
+
     /**
      * Initializes the auto process
      */
     var initAuto = function() {
       // if autoDelay was supplied, launch the auto show using a setTimeout() call
       if (slider.settings.autoDelay > 0) {
-        setTimeout(el.startAuto, slider.settings.autoDelay);
+        var timeout = setTimeout(el.startAuto, slider.settings.autoDelay);
       // if autoDelay was not supplied, start the auto show normally
       } else {
         el.startAuto();
 
         //add focus and blur events to ensure its running if timeout gets paused
-        $(window).focus(windowFocusHandler).blur(windowBlurHandler);
+        $(window).focus(function() {
+          el.startAuto();
+        }).blur(function() {
+          el.stopAuto();
+        });
       }
       // if autoHover is requested
       if (slider.settings.autoHover) {
@@ -1082,7 +1071,7 @@
         start: {x: 0, y: 0},
         end: {x: 0, y: 0}
       };
-      slider.viewport.on('touchstart MSPointerDown pointerdown', onTouchStart);
+      slider.viewport.bind('touchstart MSPointerDown pointerdown', onTouchStart);
 
       //for browsers that have implemented pointer events and fire a click after
       //every pointerup regardless of whether pointerup is on same screen location as pointerdown or not
@@ -1101,28 +1090,17 @@
      *  - DOM event object
      */
     var onTouchStart = function(e) {
-      // watch only for left mouse, touch contact and pen contact
-      // touchstart event object doesn`t have button property
-      if (e.type !== 'touchstart' && e.button !== 0) {
-        return;
-      }
-      e.preventDefault();
       //disable slider controls while user is interacting with slides to avoid slider freeze that happens on touch devices when a slide swipe happens immediately after interacting with slider controls
       slider.controls.el.addClass('disabled');
 
       if (slider.working) {
+        e.preventDefault();
         slider.controls.el.removeClass('disabled');
       } else {
         // record the original position when touch starts
         slider.touch.originalPos = el.position();
         var orig = e.originalEvent,
         touchPoints = (typeof orig.changedTouches !== 'undefined') ? orig.changedTouches : [orig];
-		var chromePointerEvents = typeof PointerEvent === 'function'; 
-		if (chromePointerEvents) { 
-			if (orig.pointerId === undefined) { 
-				return;
-			} 
-		}
         // record the starting touch x, y coordinates
         slider.touch.start.x = touchPoints[0].pageX;
         slider.touch.start.y = touchPoints[0].pageY;
@@ -1131,18 +1109,11 @@
           slider.pointerId = orig.pointerId;
           slider.viewport.get(0).setPointerCapture(slider.pointerId);
         }
-        // store original event data for click fixation
-        slider.originalClickTarget = orig.originalTarget || orig.target;
-        slider.originalClickButton = orig.button;
-        slider.originalClickButtons = orig.buttons;
-        slider.originalEventType = orig.type;
-        // at this moment we don`t know what it is click or swipe
-        slider.hasMove = false;
-        // on a "touchmove" event to the viewport
-        slider.viewport.on('touchmove MSPointerMove pointermove', onTouchMove);
-        // on a "touchend" event to the viewport
-        slider.viewport.on('touchend MSPointerUp pointerup', onTouchEnd);
-        slider.viewport.on('MSPointerCancel pointercancel', onPointerCancel);
+        // bind a "touchmove" event to the viewport
+        slider.viewport.bind('touchmove MSPointerMove pointermove', onTouchMove);
+        // bind a "touchend" event to the viewport
+        slider.viewport.bind('touchend MSPointerUp pointerup', onTouchEnd);
+        slider.viewport.bind('MSPointerCancel pointercancel', onPointerCancel);
       }
     };
 
@@ -1153,16 +1124,15 @@
      *  - DOM event object
      */
     var onPointerCancel = function(e) {
-      e.preventDefault();
       /* onPointerCancel handler is needed to deal with situations when a touchend
       doesn't fire after a touchstart (this happens on windows phones only) */
       setPositionProperty(slider.touch.originalPos.left, 'reset', 0);
 
       //remove handlers
       slider.controls.el.removeClass('disabled');
-      slider.viewport.off('MSPointerCancel pointercancel', onPointerCancel);
-      slider.viewport.off('touchmove MSPointerMove pointermove', onTouchMove);
-      slider.viewport.off('touchend MSPointerUp pointerup', onTouchEnd);
+      slider.viewport.unbind('MSPointerCancel pointercancel', onPointerCancel);
+      slider.viewport.unbind('touchmove MSPointerMove pointermove', onTouchMove);
+      slider.viewport.unbind('touchend MSPointerUp pointerup', onTouchEnd);
       if (slider.viewport.get(0).releasePointerCapture) {
         slider.viewport.get(0).releasePointerCapture(slider.pointerId);
       }
@@ -1182,8 +1152,6 @@
       yMovement = Math.abs(touchPoints[0].pageY - slider.touch.start.y),
       value = 0,
       change = 0;
-      // this is swipe
-      slider.hasMove = true;
 
       // x axis swipe
       if ((xMovement * 3) > yMovement && slider.settings.preventDefaultSwipeX) {
@@ -1192,10 +1160,6 @@
       } else if ((yMovement * 3) > xMovement && slider.settings.preventDefaultSwipeY) {
         e.preventDefault();
       }
-      if (e.type !== 'touchmove') {
-        e.preventDefault();
-      }
-
       if (slider.settings.mode !== 'fade' && slider.settings.oneToOneTouch) {
         // if horizontal, drag along x axis
         if (slider.settings.mode === 'horizontal') {
@@ -1217,8 +1181,7 @@
      *  - DOM event object
      */
     var onTouchEnd = function(e) {
-      e.preventDefault();
-      slider.viewport.off('touchmove MSPointerMove pointermove', onTouchMove);
+      slider.viewport.unbind('touchmove MSPointerMove pointermove', onTouchMove);
       //enable slider controls as soon as user stops interacing with slides
       slider.controls.el.removeClass('disabled');
       var orig    = e.originalEvent,
@@ -1267,19 +1230,9 @@
           }
         }
       }
-      slider.viewport.off('touchend MSPointerUp pointerup', onTouchEnd);
-
+      slider.viewport.unbind('touchend MSPointerUp pointerup', onTouchEnd);
       if (slider.viewport.get(0).releasePointerCapture) {
         slider.viewport.get(0).releasePointerCapture(slider.pointerId);
-      }
-      // if slider had swipe with left mouse, touch contact and pen contact
-      if (slider.hasMove === false && (slider.originalClickButton === 0 || slider.originalEventType === 'touchstart')) {
-        // trigger click event (fix for Firefox59 and PointerEvent standard compatibility)
-        $(slider.originalClickTarget).trigger({
-          type: 'click',
-          button: slider.originalClickButton,
-          buttons: slider.originalClickButtons
-        });
       }
     };
 
@@ -1474,8 +1427,9 @@
           value = slider.settings.mode === 'horizontal' ? -(position.left - moveBy) : -position.top;
           // plugin values to be animated
           setPositionProperty(value, 'slide', slider.settings.speed);
+        } else {
+          slider.working = false;
         }
-        slider.working = false;
       }
       if (slider.settings.ariaHidden) { applyAriaHiddenAttributes(slider.active.index * getMoveBy()); }
     };
@@ -1486,7 +1440,6 @@
     el.goToNextSlide = function() {
       // if infiniteLoop is false and last page is showing, disregard call
       if (!slider.settings.infiniteLoop && slider.active.last) { return; }
-	  if (slider.working === true){ return ;}
       var pagerIndex = parseInt(slider.active.index) + 1;
       el.goToSlide(pagerIndex, 'next');
     };
@@ -1497,7 +1450,6 @@
     el.goToPrevSlide = function() {
       // if infiniteLoop is false and last page is showing, disregard call
       if (!slider.settings.infiniteLoop && slider.active.index === 0) { return; }
-	  if (slider.working === true){ return ;}
       var pagerIndex = parseInt(slider.active.index) - 1;
       el.goToSlide(pagerIndex, 'prev');
     };
@@ -1519,8 +1471,6 @@
           el.goToPrevSlide();
         }
       }, slider.settings.pause);
-	  //allback for when the auto rotate status changes
-	  slider.settings.onAutoChange.call(el, true);
       // if auto controls are displayed and preventControlUpdate is not true
       if (slider.settings.autoControls && preventControlUpdate !== true) { updateAutoControls('stop'); }
     };
@@ -1532,15 +1482,11 @@
      *  - if true, auto controls state will not be updated
      */
     el.stopAuto = function(preventControlUpdate) {
-      // if slider is auto paused, just clear that state
-      if (slider.autoPaused) slider.autoPaused = false;
       // if no interval exists, disregard call
       if (!slider.interval) { return; }
       // clear the interval
       clearInterval(slider.interval);
       slider.interval = null;
-	  //allback for when the auto rotate status changes
-	  slider.settings.onAutoChange.call(el, false);
       // if auto controls are displayed and preventControlUpdate is not true
       if (slider.settings.autoControls && preventControlUpdate !== true) { updateAutoControls('start'); }
     };
@@ -1633,12 +1579,10 @@
       $('.bx-caption', this).remove();
       if (slider.controls.autoEl) { slider.controls.autoEl.remove(); }
       clearInterval(slider.interval);
-      if (slider.settings.responsive) { $(window).off('resize', resizeWindow); }
-      if (slider.settings.keyboardEnabled) { $(document).off('keydown', keyPress); }
+      if (slider.settings.responsive) { $(window).unbind('resize', resizeWindow); }
+      if (slider.settings.keyboardEnabled) { $(document).unbind('keydown', keyPress); }
       //remove self reference in data
       $(this).removeData('bxSlider');
-	  // remove global window handlers
-	  $(window).off('blur', windowBlurHandler).off('focus', windowFocusHandler);
     };
 
     /**

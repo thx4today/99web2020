@@ -11,11 +11,14 @@ a:link{
 	clear: both;
 	display: block;
 }
-.bx-wrapper{    margin-bottom: 0px;}
+.bx-wrapper {
+    box-shadow: 0 none;
+    border: 0 none;
+    background: none;
+}
 .bx-wrapper .bx-prev,
 .bx-wrapper .bx-next {
 	display: none;
     left: 10px;
     background: url(../images/controls.png) no-repeat 0 -32px;
-
 }

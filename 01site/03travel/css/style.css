@@ -1,5 +1,6 @@
 @charset "utf-8";	
 
+html,body{cursor:url(../images/ico_06.png)0 0,auto;}
 /*header 시작*/
 .header_wrap{
 	width: 100%;

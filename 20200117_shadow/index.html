@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>shadow</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		body{background-color: #f1f1f1;}
+		div.blur{transition: .3s; font-weight: bold;}
+		div.blur:hover {text-shadow: 3px 3px 0.5px red}
+		.shadow{
+			text-shadow: 0 0 2px #fff, 0px 0px 10px red;
+			color: #fff;
+		}
+		.box{width: 100px;height: 100px;margin: 0 auto;background-color: #fff;text-align: center;
+			line-height: 100px; _box-shadow: 5px 5px #000;
+			transition: 0.6s;font-size: 10px;}
+		.box:hover{ box-shadow: 5px 5px 5px #000, -5px -5px 5px red;}
+	</style>
+</head>
+<body>
+	<div class="blur">
+		<a href="#">drop shadow</a>
+	</div>
+	<div class="shadow">
+		<a href="#">drop shadow</a>
+	</div>
+	<div class="box">
+		<a href="#">BOX SHADOW</a>
+	</div>
+</body>
+</html>
