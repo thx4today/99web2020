@@ -2,12 +2,14 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Document</title>	
+	<link rel="stylesheet" href="animate.css">
 	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
+	<script src="wow.js"></script>
 
 	<script>
 		$(document).ready(function(){
@@ -21,6 +23,20 @@
 				pager:false
 			});
 		});
+	</script>
+
+	<style>
+		.box01 li,
+		.box02 li,
+		.box03 li{
+			transition: 0.6s;
+		}
+		ul.box01 li:hover,
+		ul.box02 li:hover,
+		ul.box03 li:hover{box-shadow: 10px 10px 10px black;}
+	</style>
+	<script>
+		new WOW().init();
 	</script>
 
 </head>
@@ -409,22 +425,22 @@
 			</ul>
 		</div>
 		<div class="step02">
-			<ul class="clearfix">
-				<li>
+			<ul class="box02 clearfix">
+				<li class="wow pulse" data-wow-delay="0">
 					<img src="images/03travel(3).jpg" alt="">
 					<div class="steptxt">
 						<p>HILLTON HOTEL (PARIS)
 						<span class="star">★★★</span>★★</p>
 					</div>
 				</li>
-				<li>
+				<li class="wow pulse" data-wow-delay="0.2s">
 					<img src="images/03travel(4).jpg" alt="">
 					<div class="steptxt">
 						<p>관광명소(디즈니랜드)
 						<span class="star">★★★</span>★★</p>
 					</div>
 				</li>
-				<li>
+				<li class="wow pulse" data-wow-delay="0.4s">
 					<img src="images/03travel(5).jpg" alt="">
 					<p class="hk">HONGKONG</p>
 					<div class="weathertxt">
@@ -432,7 +448,7 @@
 						<span>습도 60% 바람 남남동 2m/s</span>
 					</div>
 				</li>
-				<li>
+				<li class="wow pulse" data-wow-delay="0.6s">
 					<img src="images/03travel(6).jpg" alt="">
 					<div class="facebook_txt">
 						"해외여행은 처음이였는데,<br>
@@ -452,8 +468,8 @@
 			</ul>
 		</div>		
 		<div class="step03">
-			<ul class="clearfix">
-				<li>		
+			<ul class="box03 clearfix">
+				<li class="wow pulse" data-wow-delay="0.8s">		
 					<div class="step0301">
 						<div class="cover"></div>
 						<div class="ico_plus">
@@ -470,7 +486,7 @@
 						</div>
 					</div>
 				</li>
-				<li>		
+				<li class="wow pulse" data-wow-delay="1s">		
 					<div class="step0301">
 						<div class="cover"></div>
 						<div class="ico_plus">
@@ -487,7 +503,7 @@
 						</div>
 					</div>
 				</li>
-				<li>		
+				<li class="wow pulse" data-wow-delay="1.2s">		
 					<div class="step0301">
 						<div class="cover"></div>
 						<div class="ico_plus">
@@ -504,7 +520,7 @@
 						</div>
 					</div>
 				</li>
-				<li>		
+				<li class="wow pulse" data-wow-delay="1.4s">		
 					<div class="step0301">
 						<div class="cover"></div>
 						<div class="ico_plus">
