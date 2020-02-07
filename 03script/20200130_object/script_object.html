@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+	<style>
+		button {
+		    -webkit-appearance: button;
+		    -webkit-writing-mode: horizontal-tb !important;
+		    text-rendering: auto;
+		    color: #fff;
+		    letter-spacing: normal;
+		    word-spacing: normal;
+		    text-transform: none;
+		    text-indent: 0px;
+		    text-shadow: none;
+		    display: inline-block;
+		    text-align: center;
+		    align-items: flex-start;
+		    cursor: default;
+		    background-color: #000;
+		    box-sizing: border-box;
+		    margin: 0em;
+		    font: 400 15px Arial;
+		    padding: 20px 40px;
+		    border-width: 0px;
+		    border-style: outset;
+		    border-color: buttonface;
+		    border-image: initial;
+		    border-radius: 30px;
+		    transition: .3s;
+	}
+	button:hover{
+		background-color: #fff;
+		color: #000;
+		border: 1px solid #000;
+	}
+	.wrap{
+		width: 600px;
+		height: 300px;
+		background-color: gold;
+		text-align: center;
+		border: 1px solid #000;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div id="var1"> </div>
+		<div id="var2"> </div>
+		<div class="var3">1</div>
+		<div class="var3">2</div>
+		<script>
+			var car = ["Sonata", 100, "white"];
+			var car1= {name:"Volt",speed:200,color:"red"};
+			document.getElementById("var1").innerHTML="자동차이름 : "+car1.name;
+			document.getElementById("var2").innerHTML="자동차속도 : "+car1["speed"];
+			var carColor=document.getElementsByClassName("var3");
+			//document.getElementsByClassName("var3")[1].innerHTML="자동차색상 : "+car1.color;
+			carColor[0].innerHTML="-자동차색상 : "+ car1.color;
+		</script>
+		<p class="msg1"></p>
+		<p class="msg2"></p>
+		<p class="msg3"></p>
+		<script>
+			var obj={
+				m1:function(){
+					return"Hello Sonata";
+				},
+				m2:function(a){
+					var result=a;
+					return result;
+				},
+				m3:function(a,b){
+					var result=a+b;
+					return result;
+				}
+			};
+			var msgClass1=document.getElementsByClassName("msg1");
+			msgClass1[0].innerHTML=obj.m1();
+			var msgClass2=document.getElementsByClassName("msg2");
+			msgClass2[0].innerHTML=obj.m2(100);
+			var msgClass3=document.getElementsByClassName("msg3");
+			msgClass3[0].innerHTML=obj.m3(100,200);
+		</script>
+		
+		<script>
+			var divTags=document.getElementsByTagName("div");
+			console.log("div tag count : " +divTags.length);
+			var pTags=document.getElementsByTagName("P");
+			console.log("p tag count : "+pTags.length);
+	
+			//divTags[1].style.border="2px solid #ccc"
+			function divColor(){
+				divTags[1].style.backgroundColor="#00FF00"
+				// for(var i=0;i<divTags.length;i++){
+				// 	console.log(i);
+				// 	divTags[i].style.backgroundColor="#00FF00"
+				// }
+
+				
+				// for(var i=0;i<pTags.length;i++){
+				// 	pTags[i].style.border="2px solid #0f0"
+				// }
+			}
+			function Clear(){
+				for(var i=0;i<divTags.length;i++){
+					console.log(i);
+					divTags[i].style.border="0 none"
+				}
+				for(var i=0;i<pTags.length;i++){
+					pTags[i].style.border="0 none"
+				}
+			}
+		</script>
+		<button type="button" onclick="divColor()">CHANGE</button>
+		<button type="button" onclick="Clear()">GO BACK</button>
+	</div>
+</body>
+</html>

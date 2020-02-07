@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+</head>
+<body>
+	<script>
+		var x = 100; //전역변수
+		var cite = "그녀는 \"누구세요\"라고 했습니다."
+		function name(){
+			var y = 200; //지역변수 
+			var x = 300;
+			document.write("지역변수 : "+y+"<br>");
+			var z; //지역변수 
+			z=x+y;
+			z=this.x+y;//전역변수 X+ 지역변수 y
+			document.write("전체합계 : "+(x+y));
+		}
+		name();
+
+		//document.write(y); //지역변수로 출력 안됨(funcion name(){}안에 있어야 출력됨
+		document.write(cite);
+	</script>
+
+	<div style="height:20px; background-color: red;">	<script>		
+		name();
+	</script>
+	</div>
+
+	<p onmouseover="document.body.style.color='red'"
+	onmouseout="document.body.style.color='gold'">test</p>
+	
+	<script>
+		function bodyColorOver({
+			document.body.style.color='pink';
+		})
+		function bodyColorOut({
+			document.body.style.color="orange";
+		})
+	</script>
+
+	<div onmouseover="bodyColorOver()" onmouseout="bodyColorOut()">
+		hello
+	</div>
+</body>
+</html>

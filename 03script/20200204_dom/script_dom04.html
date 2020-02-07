@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>동적 생성</title>
+	<style>
+		#myDiv{width: 100%;position: absolute;top: 0;left: 0;}
+	</style>
+	<script>
+		function createDiv(){
+			var obj=document.getElementById("parent");
+			//var obj=document.getElementsByTagName("body")[0];
+			var newDiv=document.createElement("div");
+			newDiv.innerHTML="new div"
+			newDiv.setAttribute("id","myDiv");
+			newDiv.style.backgroundColor="gold";
+
+			newDiv.onclick=function(){
+				var p=this.parentElement;
+				console.log(p);
+				p.removeChild(this);
+			}
+			obj.appendChild(newDiv);
+	}
+	</script>
+</head>
+<body id="parent">
+	<h3>div생성</h3>
+	<hr>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia blanditiis fuga, deleniti vero nihil. Id impedit nemo sed corrupti cumque.</p>
+	<a href="#" onclick="createDiv()">div생성</a>
+
+</body>
+</html>

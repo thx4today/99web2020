@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<style>
+		.box, .box1 { float: left; width: 200px;text-align: center;}
+		.box { background-color: gold;}
+		.box1 {background-color: pink;}
+	</style>
+</head>
+<body>
+	<script>
+
+		function adder(a,b){
+			// var a = 10;
+			// var b = 20;
+			var sum = a + b;
+			//document.write(sum);
+			return sum;
+		}
+		var n = adder(10,20);
+		document.write(n);
+		//adder();
+
+	</script>
+	<br>
+	<script>
+		 function dan(dan,size){
+		 	document.write("<div style='font-size:" + size + "px'>"+dan+"단</div>")
+		 	//var dan = 3;
+		 	for(var i=1; i<=9;i++){
+		 		document.write(dan + " X " + i + " = " + dan*i+"<br>");
+		 	}
+		 }
+		 dan(4);
+	</script>
+	<div class="box">
+		<script>
+			dan(3,30);
+		</script>
+	</div>
+	<div class="box1">
+		<script>
+			dan(4,30);
+		</script>
+	</div>
+</body>
+</html>
