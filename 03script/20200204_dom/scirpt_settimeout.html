@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>SET TIME OUT</title>
+	<script>
+		// function myAlert(time){
+		// 	alert(time+"초 후 1번 실행됩니다.");
+		// }
+		// setTimeout("myAlert(3)",3000);
+	</script>
+</head>
+<body>
+	<div>
+		<span id="div" style="background-color: gold">Lorem ipsum dolor sit amet.</span>
+	</div>
+	<a href="#" onclick="rotate()">클릭하세여</a>
+	<a href="#" onclick="sss()">멈출ㄲㅔ여</a>
+	<a href="#" onclick="res()">다시 움직이실께여</a>
+	<script>
+		var div=document.getElementById("div");
+		function rotate(){
+			var str=div.innerHTML;
+			var firstChar = str.substr(0,1);
+			var remains = str.substr(1,str.length-1)
+			console.log(firstChar);
+			str=remains+firstChar;
+			div.innerHTML=str;
+		}
+		var timerId = setInterval("rotate()",200)
+		function sss(){
+			clearInterval(timerId);
+		}
+		function res(){
+			timerId = setInterval("rotate()",200);
+		}
+
+	</script>
+</body>
+</html>

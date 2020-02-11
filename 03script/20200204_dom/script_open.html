@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>open</title>
+	<script>
+		function load(url){
+			window.open(url,"naver","resizeable=no,width=960,height=900");
+		}
+	</script>
+</head>
+<body>
+	<a href="http://www.naver.com" target="_blank">a태그로 새창 띄우기</a>
+	<hr>
+	<a href="" onclick="load('http://www.naver.com')">스크립트로 새창 띄우기 (1)</a>
+	<a href="" onclick="load('http://www.nate.com')">스크립트로 새창 띄우기 (2)</a>
+	<a href="javascript:load('http://www.daum.net')">스크립트로 새창 띄우기 (3)</a>
+</body>
+</html>
