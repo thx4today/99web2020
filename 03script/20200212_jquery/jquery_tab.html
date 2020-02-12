@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".contentWrap>ul>li").click(function(){
+				var liNum=$(this).index();
+				console.log(liNum);
+				$(".contentWrap>ul>li").removeClass();
+				$(this).addClass("active");
+				$(".contentTxt>div").hide();
+				$(".contentTxt>div").eq(liNum).show();
+			})
+		})
+
+		$(document).ready(function(){
+			$(".contentWrap>ul>li").click(function{
+				var liNum=$(this).index();
+				console.log(liNum);
+				$(".contentWrap>ul>li").removeClass();
+				$(this).addClass("active");
+				$(".contentTxt>div").hide();
+				$(".contentTxt>div").eq(liNum).show();
+			})
+		})
+	</script>
+
+	<style>
+		.contentWrap{width: 1000px;margin: 0 auto;}
+		.contentWrap li{float: left;width: 20%;text-align: center;border: 1px solid #000;}
+		.contentWrap li:hover{background-color: skyblue;}
+		.contentWrap li.active{background-color: gold;color: #fff;}
+		.contentWrap .contentTxt{border: 1px solid #000;}
+		.contentWrap .contentTxt div{padding: 30px;display: none;}
+		.contentWrap .contentTxt div:first-child{display: block;}
+	</style>
+</head>
+<body>
+	<div class="contentWrap">
+		<ul class="clearfix">
+			<li class="active">menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="contentTxt">
+			<div>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere earum culpa molestiae, vitae esse sunt dolor, fuga consequuntur odit a beatae quidem reiciendis consectetur cumque nobis nihil aliquid eveniet eos!</div>
+			<div>2Vel, quisquam quia molestias aspernatur, dolores eum! Commodi tempore hic, voluptate, tenetur sapiente quae iure repellat minima unde adipisci ut a assumenda mollitia nulla repellendus, voluptatum distinctio, temporibus magni consequuntur.</div>
+			<div>3Iusto illum rerum dolore voluptatibus, sunt a quia eos, porro at, commodi dolor. Aperiam, adipisci temporibus, placeat, accusamus maxime doloribus illo nobis suscipit fuga rem aliquam deleniti velit, non facilis.</div>
+			<div>4Harum, quae! Deleniti sequi quaerat, ratione laboriosam aspernatur nostrum pariatur ipsum cum, illum totam eveniet atque possimus quam natus nihil beatae quisquam fuga facilis. Quos porro dolore quis deleniti excepturi?</div>
+			<div>5Libero nulla error ab id voluptas, incidunt obcaecati iure sunt dolore magni pariatur rerum, laborum, labore nisi! Cupiditate ipsa sed sunt recusandae voluptates eos architecto expedita, asperiores similique atque iste.</div>
+		</div>
+	</div>
+</body>
+</html>

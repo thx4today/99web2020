@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		//$("선택자").메소드();
+		$(document).ready(function(){
+			$("button#btnAdd").hide();	
+			$("button#btnDel").click(function(){
+				$("p").hide();
+				$(this).hide();
+				$("#btnAdd").show();
+			});
+			$("button#btnAdd").click(function(){
+				$("p").show();
+				$(this).hide();
+				$("#btnDel").show();
+			});
+			var pCount=$("p").length;
+			console.log(pCount);
+
+			$("p").eq(0).hide();
+			$("p").eq(1).hide();
+
+			$(".box1").show();
+			$(".box2").hide();
+			$(".box3").hide();
+			$("ul>li").eq(0).addClass("active");
+
+			$("ul>li").eq(0).click(function(){
+				$(".box1").show();
+				$(".box2").hide();
+				$(".box3").hide();
+				$(this).addClass("active");
+				$("ul>li").eq(1).removeClass("active");
+				$("ul>li").eq(2).removeClass("active");
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".box2").show();
+				$(".box1").hide();
+				$(".box3").hide();
+				$(this).addClass("active")
+				$("ul>li").eq(0).removeClass("active");
+				$("ul>li").eq(2).removeClass("active");
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".box3").show();
+				$(".box1").hide();
+				$(".box2").hide();
+				$(this).addClass("active")
+				$("ul>li").eq(0).removeClass("active");
+				$("ul>li").eq(1).removeClass("active");
+			});
+		});
+	</script>
+	<style>
+		li.active{background-color: #000;color: #fff;}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Voluptas ea amet optio accusamus!</p>
+	<button id="btnDel">메세지삭제</button>
+	<button id="btnAdd">메세지표시</button>
+	<style>
+		ul>li{float: left;border: 1px solid #000;padding: 10px;}
+	</style>
+
+	<ul class="clearfix">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+	</ul>
+	<div class="box1">1. Lorem ipsum dolor sit amet.</div>
+	<div class="box2">2. Lorem ipsum dolor sit amet.</div>
+	<div class="box3">3. Lorem ipsum dolor sit amet.</div>
+</body>
+</html>
