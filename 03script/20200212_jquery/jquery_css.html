@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				//$("p").css("font-size",30).css("background-color","skyblue");
+				$("p").css({
+					"font-size":20,
+					"background-color":"red"
+				});
+			});
+			
+		})
+	</script>
+</head>
+<body>
+	<p>Lorem ipsum.</p>
+	<div>test</div>
+	<p>Eveniet, accusamus!</p>
+	<p>In, veritatis.</p>
+	<p>Eos, vero?</p>
+	<p>Mollitia, tempora.</p>
+	<button>
+		글자크기
+	</button>
+</body>
+</html>

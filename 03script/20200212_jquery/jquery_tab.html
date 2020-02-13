@@ -13,18 +13,8 @@
 				$(".contentWrap>ul>li").removeClass();
 				$(this).addClass("active");
 				$(".contentTxt>div").hide();
-				$(".contentTxt>div").eq(liNum).show();
-			})
-		})
-
-		$(document).ready(function(){
-			$(".contentWrap>ul>li").click(function{
-				var liNum=$(this).index();
-				console.log(liNum);
-				$(".contentWrap>ul>li").removeClass();
-				$(this).addClass("active");
-				$(".contentTxt>div").hide();
-				$(".contentTxt>div").eq(liNum).show();
+				//$(".contentTxt>div").eq(liNum).show();
+				$(".contentTxt>div").eq(liNum).fadeIn();
 			})
 		})
 	</script>
