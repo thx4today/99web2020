@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		.nav{width: 1000px;margin: 0 auto;}
+		.nav>ul>li{width: 20%;border-bottom: 2px solid #f00;float: left;text-align: center;line-height: 40px;cursor: pointer;}
+		.nav>ul>li:hover{background-color: orange;color: #fff;}
+		.nav>ul>li.active{background-color: orange;color: #fff;}
+		.contentTxt{}
+		.contentTxt>div{border: 1px solid #000;padding: 20px;}
+	</style>
+
+	<script>
+		$(document).ready(function(){
+			$(".nav>ul>li").eq(0).addClass("active");
+			$(".contentTxt>div").hide();
+			$(".contentTxt>div").eq(0).show();
+			$(".nav>ul>li").click(function(){
+				var liNum = $(this).index();
+				$(".nav>ul>li").removeClass();
+				$(this).addClass("active");
+				$(".contentTxt>div").hide();
+				$(".contentTxt>div").eq(liNum).fadeIn();
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="nav">
+		<ul class="clearfix">
+			<li>menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="contentTxt">
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam nobis voluptatum praesentium repellat ratione itaque error hic illo perferendis minus.</div>
+			<div>Eos aperiam ut illo libero, repudiandae qui ducimus odit eligendi nam magni et ex ipsa necessitatibus voluptates, voluptate dolores vero!</div>
+			<div>Eius quisquam nemo quo atque libero beatae quam consequatur maiores quod, eaque, excepturi accusantium accusamus dolorem, natus quas, consectetur officia?</div>
+			<div>Molestias, modi, illo. Similique iusto, repellat, sit reiciendis assumenda libero fugit eos sunt perspiciatis rerum, ducimus quisquam distinctio officia nesciunt!</div>
+			<div>Soluta voluptatum, laudantium rem ipsam sit molestiae, quod sed deleniti fuga veniam quis odio saepe nisi! A aliquid delectus eum.</div>
+		</div>
+	</div>
+
+</body>
+</html>

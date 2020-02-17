@@ -13,7 +13,20 @@
 				anchor:["1st,2st,3st,4st"],
 				menu:"#topMenu",
 				navigation:true,
-				slideNavigation:true
+				slideNavigation:true,
+				afterLoad:function(anchorslink,index){
+					console.log(anchorslink+","+index)
+					if(index==2){
+						$("#onView").addClass("move")
+					}else{
+						$("#onView").removeClass("move")
+					}
+					if(index==3){
+						$("#onView03").addClass("move03")
+					}else{
+						$("#onView03").removeClass("move03")
+					}
+				}
 			});
 		})
 	</script>
@@ -26,14 +39,46 @@
 		#page2{background-image:url(images/bg2.jpg);}
 		#page3{background-image:url(images/bg3.jpg);}
 		#page4{background-image:url(images/bg4.jpg);}
-
 		.page{
 			background-repeat: no-repeat;
 			background-position: center;
 			-webkit-background-size: cover;
 			background-size: cover;
+			text-align: center;
+		}
+		.scroll{
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			animation-name: xScroll; 
+			animation-duration: 0.8s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes xScroll{
+			from{bottom: 20px;}
+			to{bottom: 40px;}
 		}
 		#navTop .active{background-color: gold;}
+		.main{
+			width: 400px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			color: #fff;
+		}
+		.main h3{
+			font-size: 3em;
+		}
+		.main p {font-size: 1.5em;margin-bottom: 20px;}
+		.main a{display: block;text-align: center;width: 150px;border: 1px solid #fff;line-height: 35px;color: #fff;border-radius: 7px;margin: 0 auto;}
+		.main a:hover{background-color: #fff;color: #000;transition: 0.3s}
+		#onView{top: 20%;transition: .6s;opacity: 0;}
+		#onView.move{top: 50%;opacity: 1;}
+		#onView03{left: 0;opacity: 0;transition: 1.2s;}
+		#onView03.move03{left: 50%;opacity: 1;}
 	</style>
 </head>
 <body>
@@ -46,10 +91,35 @@
 		</ul>
 	</nav>
 	<div id="fullpage">
-		<div class="section page" id="page1" data-anchor="1st">1</div>
-		<div class="section page" id="page2" data-anchor="2st">2</div>
-		<div class="section page" id="page3" data-anchor="3st">3</div>
-		<div class="section page" id="page4" data-anchor="4st">4</div>
+		<div class="section page" id="page1" data-anchor="1st">
+			<div class="scroll">
+				<a href="#2st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page2" data-anchor="2st">
+			<div class="main" id="onView">
+				<h3>Lorem ipsum.</h3>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">more</a>
+			</div>
+			<div class="scroll">
+				<a href="#3st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page3" data-anchor="3st">
+			<div class="main" id="onView03">
+				<h3>Lorem ipsum.</h3>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">more</a>
+			</div>
+			<div class="scroll">
+				<a href="#4st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page4" data-anchor="4st">
+			
+
+		</div>
 	</div>
 </body>
 </html>

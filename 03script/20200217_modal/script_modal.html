@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../20200121_colorbox/css/colorbox.css">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../20200121_colorbox/js/jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'><img src='../images/tourgallery_j1a.jpg'></div>");
+			$("a.modal").click(function(event){
+				var aHref = $(this).attr("href");
+				console.log(aHref);
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='"+aHref+"'>");
+				return false;
+				//event.preventDefault();
+			});
+			$("#glayLay
+				$("#glayLayer").hide();
+				$("#overLayer").hide();
+			});
+			$(".modal2").colorbox({
+				rel:".modal2"
+			});
+			$(".vimeo").colorbox({
+				iframe:true,
+				innerWidth:600,
+				innerHeight:338
+			});
+		})
+
+	</script>
+	<style>
+		ul{width: 490px;height: 240px;margin: 0 auto;}
+		ul li{margin-right: 10px;float: left;}
+		ul li:last-child{margin-right: 0;}
+		ul li a{}
+		ul li a img{}
+		#glayLayer{position: fixed;width: 100%;height: 100%;background-color: #000;left: 0;top: 0;opacity:0.6;display: none;
+		}
+		#overLayer{position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);display: none;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="../images/tourgallery_j1a.jpg" class="modal">
+				<img src="../images/tourgallery_j1.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j2a.jpg" class="modal">
+				<img src="../images/tourgallery_j2.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j3a.jpg" class="modal">
+				<img src="../images/tourgallery_j3.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j4a.jpg" class="modal">
+				<img src="../images/tourgallery_j4.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j5a.jpg" class="modal">
+				<img src="../images/tourgallery_j5.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j6a.jpg" class="modal">
+				<img src="../images/tourgallery_j6.jpg" alt="">
+			</a>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<a href="../images/tourgallery_j1a.jpg" class="modal2">
+				<img src="../images/tourgallery_j1.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j2a.jpg" class="modal2">
+				<img src="../images/tourgallery_j2.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j3a.jpg" class="modal2">
+				<img src="../images/tourgallery_j3.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j4a.jpg" class="modal2">
+				<img src="../images/tourgallery_j4.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="../images/tourgallery_j5a.jpg" class="modal2">
+				<img src="../images/tourgallery_j5.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="https://player.vimeo.com/video/259411563" class="vimeo" title="vimeo">
+				<img src="../images/tourgallery_j6.jpg" alt="">
+			</a>
+		</li>
+	</ul>
+</body>
+</html>
