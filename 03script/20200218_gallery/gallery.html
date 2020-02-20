@@ -7,6 +7,7 @@
 	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script>
 		$(function(){
+			$("#image>p").hide().eq(0).show();
 			$(".thumb").click(function(){
 				var i = $(this).index();
 				console.log(i);
@@ -14,14 +15,22 @@
 			});
 			var current = 0;
 			$(".right").click(function(){
-				if(current<2){
-				current++;
+				if(current<3){
+					current++;
+					if(current==3){
+						current=0;
+				}
+					console.log(current)
 			}
 			move();
 			});
 			$(".left").click(function(){
-				if(current>0){
-				current--;
+				if(current>=0){
+					current--;
+					if(current==-1){
+						current=2;
+				}
+					console.log(current)
 			}		
 			move();	
 			});
@@ -34,13 +43,15 @@
 	</script>
 	<style>
 		#gallery{width: 824px;height: 595px;margin: 20px auto;background-color: #ccc;}
+
 		#image{width: 760px;height: 470px;margin: 0 auto;margin-bottom: 20px;}
-		#image p{display: none;}
 
 		#thumbnail{width: 824px;height: 94px;}
+
 		#thumbnail div{float: left;}
 		#thumbnail div.left{width: 32px;}
 		#thumbnail div.right{float: right;}
+
 		#thumbnail .container{width: 760px;height: 115px;overflow: hidden;}
 		#thumbnail .container ul{width: 2280px;position: relative;}
 		#thumbnail .container ul li{
@@ -54,7 +65,7 @@
 <body>
 	<div id="gallery">
 		<div id="image">
-			<p style="display: block"><img src="images/0.jpg" alt=""></p>
+			<p><img src="images/0.jpg" alt=""></p>
 			<p><img src="images/1.jpg" alt=""></p>
 			<p><img src="images/2.jpg" alt=""></p>
 			<p><img src="images/3.jpg" alt=""></p>
