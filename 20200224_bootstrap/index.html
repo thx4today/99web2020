@@ -9,28 +9,60 @@
 	<script src="js/bootstrap.min.js"></script>
 	<style>
 		/*.row div{text-align: center;}*/
+		.bg-skyblue{background-color: skyblue;}
+		.h100{height: 100px;}
 	</style>
 </head>
 <body>
-	<div class="container bg-primary text-center text-white">
+	<!-- <div class="container bg-primary text-center text-white">
 		<div class="row">
 			<div class="col-sm-6 col-md-4">test1</div>
 			<div class="col-sm-6 col-md-4">test2</div>
-			<div class="d-none d-md-block col-md-4">test3</div>
+			<div class="d-none d-md-block col-md-4">test3</div>-->
 			<!-- 12는 고정 / 4개면 3 / 3개면 4 -->
-			<!-- sm:576~768 md:~992 lg:~1200 xl:1200이상 -->
- 		</div>
+			sm:576~768 md:~992 lg:~1200 xl:1200이상
+ 	<!-- 	</div>
 		<div class="row bg-secondary">
 			<div class="col-md-3">test1</div>
 			<div class="col-md-3">test2</div>
 			<div class="col-md-3">test3</div>
 			<div class="col-md-3">test4</div>
-			<!-- 12는 고정 / 4개면 3 / 3개면 4 -->
 		</div>
 		<div class="row bg-success">
 			<div class="col-md-6">test1</div>
 			<div class="col-md-6">test2</div>
-			<!-- 12는 고정 / 4개면 3 / 3개면 4 -->
+		</div>
+	</div> -->
+	<div class="bg-skyblue">
+		<div class="container text-center bg-primary">
+			<!-- fulid = width:100% -->
+			<div class="row">
+				<div class="col-12 bg-success h100">1</div>
+				<div class="col-12 bg-danger">2</div>
+				<div class="col-sm-4 bg-info">3</div>
+				<div class="col-sm-4 bg-warning">4</div>
+				<div class="col-sm-4 col bg-secondary" >5</div>
+				<div class="d-sm-none bg-light">6</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div >
+		<div class="container text-center bg-primary">
+				<div class="row">
+				<div class="col bg-success h100">1</div>
+				<div class="col bg-danger">2</div>
+				<div class="col bg-info">3</div>
+				<div class="col bg-warning">4</div>
+				<div class="col bg-secondary" >5</div>
+				<div class="col bg-light">6</div>
+			</div>
+		</div>
+	</div>
+ -->
+	<div class="container mt-3">
+		<div class="row">
+			<button type="button" class="btn btn-outline-primary mr-2">basic</button>
+			<button type="button" class="btn btn-primary">secondary</button>
 		</div>
 	</div>
 </body>
