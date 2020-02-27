@@ -18,7 +18,6 @@
 
 			function Move(){
 			nCurrent+=nStep;
-
 			if(nCurrent>nEnd){
 				nStep=-2;
 				objCar.addClass("rotate");
@@ -31,7 +30,6 @@
 			objCar.css("left",nCurrent);
 			}
 			//setInterval(Move,10);
-
 			$(".btn_start").click(function(){
 				if(nTimerId==0){
 					nTimerId=setInterval(Move,10);//1000=1초
