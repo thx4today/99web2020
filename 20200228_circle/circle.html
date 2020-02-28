@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>circle</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{background-color: skyblue;}
+		.roll{width: 300px;height: 200px;background-color: #fff;}
+		.circle{width: 100px;height: 100px;
+			border: 10px solid #000;
+			border-radius:50%;
+			position: relative;
+		}
+		@keyframes circle{
+			0%{transform:rotate(0)}
+			100%{transform: rotate(360deg);}
+		}
+		.circle:after{
+			content:"";display: block;
+			position: absolute;width: 1px;height: 100%;
+			background-color: #000;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.circle:before{
+			content:"";display: block;
+			position: absolute;width: 100%;height: 1px;
+			background-color: #000;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.roll.animate .circle{animation:circle 0.3s linear infinite forwards;}
+		.circle:nth-child(1){float: right;}
+	</style>
+	<script>
+		$(function(){
+			// $(".roll").hover(function(){
+			// 	$(this).addClass("animate");
+			// },function(){
+			// 	$(this).removeClass("animate");
+			// });
+			$(window).scroll(function(){
+				var winTop=$(this).scrollTop();
+				if(winTop>200){
+					$(".roll").addClass("animate");
+				}else{
+					$(".roll").removeClass("animate")
+				}
+			})
+		});
+			
+	</script>
+</head>
+<body>
+	<div style="height:500px"></div>
+	<div class="roll clearfix">
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+	<div style="height:1000px"></div>
+</body>
+</html>

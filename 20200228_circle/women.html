@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{background-color: deepskyblue;}
+		.woman{
+			width: 114px;height: 240px;
+			position: relative;
+			animation:bounce 1s infinite alternate;
+			left: 400px;
+		}
+		@keyframes bounce{
+			50%{transform: translateX(10px) translateY(10px);}
+		}
+		.woman>div{position: absolute;}		
+		.woman .body{z-index: 4}
+		.woman div.arm1{
+			top: 100px;left: -20px;
+			animation:aRight 1s linear infinite alternate;
+			transform-origin: 80px 20px;z-index: 5;
+		}
+		@keyframes aRight{
+			from{transform:rotate(20deg)}
+			to{transform:rotate(-40deg)}
+		}
+		.woman div.arm2{
+			top: 100px;left: -20px;
+			animation:aLeft 1s linear infinite alternate;
+			transform-origin: 80px 20px;z-index: 1;
+		}
+		@keyframes aLeft{
+			from{transform:rotate(-40deg)}
+			to{transform:rotate(20deg)}
+		}
+		.woman div.foot1{
+			top: 210px;left: 0px;
+			animation:fRight 1s linear infinite alternate;
+			transform-origin: 38px 38px;z-index: 2;
+		}
+		@keyframes fRight{
+			from{transform:rotate(-40deg)}
+			to{transform:rotate(40deg)}
+		}
+		.woman div.foot2{
+			top: 210px;left: 0px;
+			animation:fLeft 1s linear infinite alternate;
+			transform-origin: 38px 38px;z-index: 1;
+		}
+		@keyframes fLeft{
+			from{transform:rotate(40deg)}
+			to{transform:rotate(-40deg)}
+		}
+
+		.rotate{transform: rotateY(180deg);}
+	</style>
+
+	<script>
+		
+		$(function(){
+			var woman=$(".woman");
+			var nTimerId=0;;
+			var nStart=woman.position().left;
+			var nEnd=nStart+woman.width()-woman.width();
+			var nStep=2;
+			var nCurrent=nStart;
+			var nTimerId=0;
+			function hMove(){
+
+			//nCurrent=nCurrent+nStep;
+			nCurrent+=nStep;
+
+			if(nCurrent>nEnd){
+				nStep=-2;
+			}
+			if(nCurrent<nStart){
+				nStep=2;
+			}
+			woman.(function(){
+				if(nTimerId==0){
+					nTimerId=setInterval(hMove,10);//1000=1초
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="woman">
+		<div class="body"><img src="../images/body01.png" alt=""></div>
+		<div class="arm1"><img src="../images/arm01.png" alt=""></div>
+		<div class="arm2"><img src="../images/arm01.png" alt=""></div>
+		<div class="foot1"><img src="../images/foot01.png" alt=""></div>
+		<div class="foot2"><img src="../images/foot02.png" alt=""></div>
+	</div>
+	<div class="woman">
+		<div class="body"><img src="../images/body01.png" alt=""></div>
+		<div class="arm1"><img src="../images/arm01.png" alt=""></div>
+		<div class="arm2"><img src="../images/arm01.png" alt=""></div>
+		<div class="foot1"><img src="../images/foot01.png" alt=""></div>
+		<div class="foot2"><img src="../images/foot02.png" alt=""></div>
+	</div>
+</body>
+</html>
