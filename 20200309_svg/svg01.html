@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>svg</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		body{background-color: skyblue;}
+		.svg{width: 200px;height: 200px;
+			background: #f00 url(circle01.svg);}
+		.circle01{width: 100px;height: 100px;}
+		#Layer_1 circle{
+			stroke:red;
+			stroke-width:4;
+			fill:gold;
+			stroke-dasharray:290;
+			stroke-dashoffset:290;
+			
+		}
+		@keyframes circleAni{
+			from{stroke-dashoffset:290;}
+			to{stroke-dashoffset:0;}
+		}
+		.circle01:hover circle{
+			animation:circleAni 1s linear forwards;
+
+		}
+		.typeH{width: 200px;height: 200px;}
+		#layerH path{
+			fill:red;
+			stroke:blue;
+			stroke-width:4;
+			stroke-dasharray:370;
+			stroke-linecap: round;
+			animation:typeH linear infinite 10s;
+		}
+		@keyframes typeH{
+			0%{stroke-dashoffset:370;fill:skyblue;}
+			50%{fill:skyblue;}
+			100%{stroke-dashoffset:0;fill:red;}
+		}
+	</style>
+</head>
+<body>
+	<img src="circle01.svg" alt="">
+	<div class="svg"></div>
+	<div class="circle01">
+		<svg  id="Layer_1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100">
+		<circle fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" cx="50" cy="50" r="44.351"/>
+	</div>
+	<div class="typeH">
+		<svg version="1.1" id="layerH" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 100 100">
+<g>
+	<path d="M65.151,56.535H39.703V84.91H18.981V22.803c0-1.463,0.285-2.752,0.855-3.865c0.569-1.112,1.324-2.049,2.263-2.812
+		c0.938-0.76,2.045-1.331,3.32-1.713c1.273-0.38,2.581-0.571,3.923-0.571c1.341,0,2.631,0.191,3.873,0.571
+		c1.24,0.382,2.347,0.953,3.319,1.713c0.972,0.762,1.743,1.7,2.313,2.812c0.569,1.113,0.855,2.402,0.855,3.865V41.25h25.449V22.803
+		c0-1.463,0.285-2.752,0.855-3.865c0.569-1.112,1.323-2.049,2.264-2.812c0.938-0.76,2.044-1.331,3.319-1.713
+		c1.272-0.38,2.58-0.571,3.923-0.571c1.341,0,2.631,0.191,3.872,0.571c1.24,0.382,2.347,0.953,3.319,1.713
+		c0.972,0.762,1.743,1.7,2.313,2.812c0.569,1.113,0.855,2.402,0.855,3.865V84.91H65.151V56.535z"/>
+</g>
+</svg>
+	</div>
+</body>
+</html>
