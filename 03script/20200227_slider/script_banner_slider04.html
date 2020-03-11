@@ -65,21 +65,23 @@
 				}
 				current=i;
 			}
+			//자동실행
 			function trigger(){
 				$(".bt_next").trigger("click");				
 			}
-			// setInterval(trigger,2000);
-
+			setInterval(trigger,3000);
+			
+			//pager	
 			pager.click(function(){
 				i=$(this).index();
 				slideView("next");
 			});
 
+			//마우스크롤로 페이지 넘기는 기능
 			$(window).mousewheel(function(event,delta){
 				if(delta<0){
 					$(".bt_next").trigger("click");
 				}
-
 				if(delta>0){
 					$(".bt_prev").trigger("click");
 				}

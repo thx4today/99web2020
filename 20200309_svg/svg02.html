@@ -23,22 +23,14 @@
 	<script>
 		$(function(){
 			var pathes = $("#svgWrapper").find("path");
-			
-			// for(var i=0;i<pathes.length;i++){
-			// var path=$("#svgWrapper path").get(i)
-			// var total_length=path.getTotalLength();
 
-			// path.style.strokeDasharray=total_length;
-			// path.style.strokeDashoffset=total_length;
-			// $(path).animate({"strokeDashoffset":0},2000)
-			// )}
-			pathes.each(function(i,path){
-			path.style.strokeDasharray=total_length;
-			path.style.strokeDashoffset=total_length;
+			var path = $("#svgWrapper path").get(0);
+			var total_length = path.getTotalLength();
+			console.log(total_length);
 
-			})
-				var totla_	
-			}
+			path.style.strokeDasharray = total_length;
+			path.style.strokeDashoffset = total_length;
+			$(path).animate({"strokeDashoffset":0},1000);
 		});
 	</script>
 </head>
