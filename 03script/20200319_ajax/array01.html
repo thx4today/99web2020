@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		var han = ["car1", "car2", "car3"];
+		var text = "";
+		console.log(han[0]);
+
+		$(function(){
+			for(var i=0;i<han.length;i++){
+				//text += han[i];
+				text+= "<li>"+han[i]+"</li>";
+			}
+
+			$(".han").append(text);			
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="han"></ul>
+	</div>
+</body>
+</html>
