@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$.ajax({
+				url:"book.xml",
+				dataType:"xml",
+				success:function(data){
+					//기본구조 : $(data).find("book").each(function(){});
+					$(data).find("book").each(function(){
+						var title = $("title",this).text();
+						var author = $("author",this).text();
+						var price = $("price",this).text();
+						var txt = "<li>"+title+","+author+","+price+"</li>";
+						$(".han").append(txt);
+						//for(var i=0;;i++)
+					});
+				}
+			});//ajax end
+			
+		});//$end
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="han">
+			
+		</ul>
+	</div>
+</body>
+</html>

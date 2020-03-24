@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>HOMEPAGE</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <style>
+  	.h-100p{height: 100px;}
+  </style>
+</head>
+<body>
+<div class="bg-dark">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		
+		  <a class="navbar-brand" href="#!">Navbar</a>
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		    <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		       <!-- Dropdown -->
+			    <li class="nav-item dropdown">
+			      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+			        회사소개
+			      </a>
+			      <div class="dropdown-menu">
+			        <a class="dropdown-item" href="#">Link 1</a>
+			        <a class="dropdown-item" href="#">Link 2</a>
+			        <a class="dropdown-item" href="#">Link 3</a>
+			      </div>
+			    </li>
+		       <!-- Dropdown -->
+			    <li class="nav-item dropdown">
+			      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+			        제품소개
+			      </a>
+			      <div class="dropdown-menu dropdown-menu-right">
+			        <a class="dropdown-item" href="#">Link 1</a>
+			        <a class="dropdown-item" href="#">Link 2</a>
+			        <a class="dropdown-item" href="#">Link 3</a>
+			      </div>
+			    </li>
+		    </ul>
+		  </div>
+		</nav>
+	</div>
+</div>
+
+<div class="container bg-info px-0">
+	<picture> <!-- row 셀을 구분할때 필요 -->
+		<source media="(max-width:500px)" srcset="../images/lime-300.jpg">
+		<source media="(max-width:700px)" srcset="../images/lime-740.jpg">
+		<source media="(max-width:1199px)" srcset="../images/lime-1000.jpg">
+		<source media="(min-width:1200px)" srcset="../images/lime.jpg">
+		<img src="../images/lime.jpg" alt="" class="w-100">
+	</picture>
+</div>
+
+<div class="bg-light py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-3 bg-danger d-flex h-100p">
+				<div class="m-auto">col-3</div>
+			</div>
+			<div class="col-9">
+				<div class="row">
+					<div class="col-12 col-md-4 bg-primary py-2 d-flex justify-content-center align-items-center">col-9>col-4</div>
+					<div class="col-12 col-md-4 py-2 bg-info">col-9>col-4</div>
+					<div class="col-12 col-md-4 py-2 bg-success">col-9>col-4</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
