@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
 	<title>scroll</title>
 	<link rel="stylesheet" href="../../css/reset.css">
@@ -9,73 +10,86 @@
 		$(function(){
 			var menuPos = $(".nav").offset().top;
 			var car1Pos = $("#car1").offset().top;
-			var wh = $(document).height()/2;
-			console.log(wh);
+			var winHeight = $(document).height();
+			console.log(winHeight);
 
-			$(".menuPos").html(menuPos);
+
+			$(".menuPos").html(parseInt(menuPos));
 				scrollYPo();
+
 			$(window).scroll(function(){
 				scrollYPo();
+
 			});
+
 			function scrollYPo(){
-				var scrollY=$(window).scrollTop();
+				var scrollY = $(window).scrollTop();
 				$(".scrollY").html(parseInt(scrollY));
-				if(scrollY>menuPos){
+
+				if(scrollY > menuPos){
 					$(".nav").addClass("fixed");
 				}else{
 					$(".nav").removeClass("fixed");
 				}
-				if(scrollY>car1Pos-300){
+				if(scrollY> car1Pos -300){
 					$("#car1").addClass("move");
 				}else{
 					$("#car1").removeClass("move");
 				}
-				if(scrollY>car1Pos-300){
-					$("#car2").addClass("move");
+
+				if(scrollY > winHeight/2){
+					$(".top").addClass("view");
 				}else{
-					$("#car2").removeClass("move");
-				}
-				if(scrollY>wh){
-					$(".top").addClass("opa");
-				}else{					
-					$(".top").removeClass("opa");
+					$(".top").removeClass("view")
 				}
 			}
-			$(".top").click(function(e){
-				e.preventDefault();
-				$("html,body").animate({scrollTop:0},1000)
+
+
+			$(".top").click(function(){
+				$("html,body").animate({scrollTop:0},300);
 			});
+
+
+
 		});
 	</script>
 	<style>
-		.viewBox{position: fixed;width: 200px;height: 200px;right: 0;top: 30px;background-color: pink;}
+		.viewBox{
+			position: fixed;width: 200px;height: 200px;right:30px;
+			top:30px;background-color:pink;
+		}
 		.nav{width: 100%;}
-		.nav.fixed{position: fixed;height: 40px;top: 0;}
-		.nav li{float: left;width: 20%;height: 40px;text-align: center;line-height: 40px;background-color: #000;color: #fff;}
-
-		#car1{position: absolute;left: 0;width: 120px;height: 70px;transition: 1s;opacity: 0.4;}
-		#car1.move{left: 300px;opacity:1;}
-		#car2{position: absolute;right: 0;width: 120px;height: 70px;transition: 1s;opacity: 0.4;transform: rotateY(180deg);}
-		#car2.move{right: 300px;opacity:1;}
+		.nav.fixed{position: fixed;height: 40px;top:0;}
+		.nav li{
+			float: left;width: 20%;height: 40px;
+			text-align: center;line-height: 40px;
+			background-color:skyblue;
+		}
+		#car1{position: absolute;left:30px;width: 120px;height: 70px;transition: 0.3s;opacity:0}
+		#car1.move{left:300px;opacity:1}
 
 		.top{
-			position: fixed;width: 100px;height: 100px;line-height: 100px;right: 50px;bottom: 50px;border-radius: 50%;
-			background-color: #000;color: #fff;text-align: center;cursor: pointer;
-			animation:viewTop 1s infinite alternate; /*이름 시간 반복*/
-			opacity: 0;transition: 0.3s;
+			position: fixed;width: 100px;height: 100px;line-height: 100px;
+			right: 50px;bottom: 50px;border-radius: 50%;
+			background-color: #000;color:white;text-align: center;
+			cursor:pointer;opacity:0;transition:0.5s;
+			animation:viewTop 1s infinite alternate;
 		}
-		.top.opa{opacity:1;}
 		@keyframes viewTop{
-			from{transform:translateY(-20px);}
-			to{transform:translateY(0px);}
+			from{transform:translateY(0);}
+			to{transform:translateY(-20px);}
 		}
+		.top.view{opacity:1;}
+
+		
 	</style>
 </head>
 <body>
 	<div class="viewBox">
-		스크롤의 위치: <span class="scrollY">0</span><br>
-		메뉴 위치: <span class="menuPos">0</span><a href="#menu">이동</a>
+		스크롤위치 : <span class="scrollY">0</span><br>
+		메뉴위치 : <span class="menuPos">0</span> <a href="#menu">이동</a>
 	</div>
+	<!-- div#wrapper>p*100>{$} -->
 	<div id="wrapper">
 		<p>1</p>
 		<p>2</p>
@@ -147,7 +161,6 @@
 		<p>59</p>
 		<p>60</p>
 		<img src="../../images/car.png" alt="" id="car1">
-		<img src="../../images/car.png" alt="" id="car2">
 		<p>61</p>
 		<p>62</p>
 		<p>63</p>
@@ -189,8 +202,6 @@
 		<p>99</p>
 		<p>100</p>
 	</div>
-	<div class="top">
-		top
-	</div>
+	<div class="top">top</div>
 </body>
 </html>
