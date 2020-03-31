@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>오늘의 날씨</title>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+	<style>
+	/*reset*/
+	*{margin: 0;padding: 0;box-sizing: border-box;}
+	li{list-style: none;}
+	a:visited,
+	a:link{text-decoration: none;color: #000;}
+	.clearfix:after{content: ""; display: block;clear: both;}
+	html,body{font-family: 'Baloo 2', cursive;}
+	.imgWrap{
+		position: absolute;
+		z-index: 1;
+		width: 430px;
+		height: 480px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.imgWrap img{width: 100%;}
+	
+	.btn{
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 2;
+		top: 2%;
+		left: 2%;
+		cursor: pointer;
+	}
+	.one,.two,.three:after{
+		content: "";
+		width: 30px;
+		height: 2px;
+		background-color: #313340;
+		position: absolute;
+		border-radius: 25%;
+	}
+	.one{top: 10px;}
+	.two{top: 20px;}
+	.three{}
+
+	#weather_info{
+		width: 320px;height: 540px;
+		margin: 0 auto;
+		background-color: #E7F0FD;
+		position: relative;
+		top: 36px;
+	}
+	h1{text-align: center;font-size: 18px;padding-top: 40px;}
+	p.city{color: #6C7284;font-size: 16px;text-align: center;}
+	p.w_id,div.icon,p.temp,div.tempWrap{position: absolute;}
+	p.w_id{top: 60%;left: 50%;transform: translateX(-50%);color: #6C7284;}
+	div.icon{width: 60%;top: 20%;left: 50%;transform: translateX(-50%);}
+	div.icon img{width: 100%;}
+	p.temp{
+		top: 65%;left: 50%;
+		transform: translateX(-50%);
+		font-size: 3em;
+	}
+	div.tempWrap{
+		width: 80%;
+		height: 100px;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+		.temp_max,.temp_min{
+			width: 45%;
+			height: 60px;
+			position: absolute;
+			bottom: 50%;
+			text-align: center;
+			box-shadow: 5px 5px 5px #ccc;
+			line-height: 60px;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+		.temp_max{
+			left: 50%;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="imgWrap">
+		<img src="img/iphone.png" alt="">
+	</div>
+	<select name="inpCity" id="inpCity">
+		<option value="Seoul" selected>서울</option>
+		<option value="Busan">부산</option>
+		<option value="Incheon">인천</option>
+	</select>
+	<div id="weather_info">
+	<div class="btn">
+		<span class="one"></span>
+		<span class="two"></span>
+		<span class="three"></span>
+	</div>
+		<h1>Weather</h1>
+		<p class="city">Seoul</h1>
+		<section>
+			<p class="w_id">clear</p>
+			<div class="icon">icon</div>
+			<p class="temp">9</p>
+			<div class="tempWrap">
+				<p class="temp_max">최대</p>
+				<p class="temp_min">최소</p>
+			</div>
+		</section>
+	</div>
+
+	<div id="time-result"></div>
+	<script>
+		var d = new Date();
+    var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일";
+    var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
+    var result = document.getElementById("time-result");
+        result.innerHTML = "오늘 날짜는 " + currentDate + " 입니다.";
+
+		loca("Seoul");
+		$("#inpCity").change(function(){
+			$("#inpCity option:selected").each(function(){
+				loca($(this).val());
+			});
+		});
+		function loca(location){
+			// API 요청 URL 변수
+			var url = 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&APPID=89c507e1c15bbce821741ff610fe133b';
+
+			$.getJSON(url,function(data){
+				// 날씨 데이터 객체
+				var sys = data.sys; 			// 국가명, 일출/일몰			
+				var city = data.name; 			// 도시명
+				
+				var weather = data.weather; 	// 날씨 객체
+		 		var wmain = weather[0].main; 	// 구름 상태(Cloudiness)
+				var w_id = weather[0].id; 		// 날씨상태 id 코드
+				var icon = weather[0].icon;		// 날씨 아이콘 정보
+				
+				var country = sys.country;  	// 국가명
+				
+				var main = data.main;  			// 온도 기압 관련 객체
+				var temp = main.temp; 			// 현재 온도
+				var temp_min = main.temp_min 	// 최저 온도
+				var temp_max = main.temp_max 	// 최고 온도
+
+				// 날씨 아이콘
+				var icon_url = 'img/' + icon+'.svg';
+	      
+				// 날씨 정보 표시
+				$('.city').html(city + ", South Korea");			
+				$('.icon').html("<img src='" + icon_url + "'>");
+				$('.w_id').html(wmain);
+				$(' .temp').html(parseInt(temp-273.15) + '&deg;');
+				$('.temp_max').html( parseInt(temp_max-273.15) + '&deg;' + ' max');
+				$('.temp_min').html(parseInt(temp_min-273.15) + '&deg;' + ' min');
+
+				// 데이터 로딩 후 로딩이미지 제거
+				$('.load_img').hide();		
+
+			})	// end getJSON()
+				.fail(function() {
+					// 오류 메시지
+	   				alert( "loding error" );
+	  			});
+		}
+	</script>
+</body>
+</html>
